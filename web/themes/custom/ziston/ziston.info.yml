@@ -1,0 +1,42 @@
+name: Ziston Theme
+type: theme
+description: 'A flexible, recolorable theme with many regions and a responsive, mobile-first layout.'
+package: gaviasthemes
+base theme: false
+libraries:
+  - ziston/global-styling
+  - core/jquery
+
+libraries-override:
+  views_infinite_scroll/views-infinite-scroll: ziston/views-infinite-scroll
+
+regions:
+  offcanvas: 'After Offcanvas'
+  topbar: 'Topbar'
+  language: 'Language'
+  search: 'Search'
+  branding: 'Branding'
+  header_right: 'Header Right'
+  breadcrumbs: 'Breadcrumbs'
+  help: 'Help'
+  main_menu: 'Main menu'
+  before_content: 'Before Content'
+  content: 'Main content'
+  sidebar_left: 'Sidebar Left'
+  sidebar_right: 'Sidebar Right'
+  after_content: 'After Content'
+  highlighted: 'Highlighted'
+  before_footer: 'Before Footer'
+  footer_first: 'Footer Fisrt'
+  footer_second: 'Footer Second'
+  footer_third: 'Footer Third'
+  footer_four: 'Footer Four'
+  after_footer: 'After Footer'
+  copyright: 'Copyright'
+  listing_sidebar: 'Listing Single Sidebar'
+  listings_user: 'Listings of User'
+  other: 'Other'
+
+version: '1.0.2'
+core_version_requirement: ^8.8 || ^9
+project: 'drupal'

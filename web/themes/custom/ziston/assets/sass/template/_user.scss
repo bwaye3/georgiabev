@@ -1,0 +1,194 @@
+body.path-user {
+  	.user-form-page {
+	 	$breakpoint: 800px;
+	 	display: flex;
+	 	flex-wrap: wrap;
+	 	min-height: 100vh;
+	 	max-height: 100%;
+	 	background: var(--colorGinLayerBackground);
+	 	@media (min-width: $breakpoint) {
+			flex-wrap: nowrap;
+	 	}
+	 	&, * {
+			box-sizing: border-box;
+	 	}
+	 	&__user-form, &__wallpaper {
+			width: 100%;
+			@media (min-width: $breakpoint) {
+		  		flex-basis: 50%;
+			}
+	 	}
+	 	&__user-form {
+			display: flex;
+			flex-wrap: wrap;
+			max-width: $breakpoint;
+			@media (max-width: $breakpoint) {
+		  		flex-basis: 100%;
+		  		align-content: flex-start;
+			}
+			@media (min-width: $breakpoint) {
+		 	 	min-width: 640px;
+			}
+			img {
+		  		max-height: 40px;
+			}
+	 	}
+
+	 	&__wallpaper {
+			display: none;
+			pointer-events: none;
+			position: relative;
+			background-color: #ccc;
+			@media (min-width: $breakpoint) {
+			  	display: flex;
+			  	flex-grow: 1;
+			  	flex-basis: 70%;
+			}
+			img {
+		  		position: absolute;
+		  		top: 0;
+		  		left: 0;
+			  	width: 100%;
+			  	height: 100%;
+			  	object-fit: cover;
+			}
+	 	}
+
+	 	&__page-title {
+			font-size: 20px;
+			text-transform: uppercase;
+			margin: 10px 0 10px;
+			padding-bottom: 15px;
+			width: 100%;
+			max-width: 100%;
+			text-overflow: unset;
+			white-space: normal;
+			position: relative;
+			@media (min-width: $breakpoint) {
+		  		font-size: 22px;
+			}
+			&:after{
+				content: '';
+				width: 60px;
+				height: 2px;
+				background: $theme-color;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				z-index: 11;
+			}
+	 	}
+	 	.content-header {
+			flex-basis: 100%;
+			padding-top: 20px;
+			padding-bottom: 20px;
+			background: transparent;
+			.site-branding-logo{
+				max-width: 120px!important;
+				display: inline-block;
+			}
+			a {
+		  		display: inline-flex;
+			}
+	 	}
+
+	 	.layout-container {
+			max-width: 560px;
+			margin: 0 auto !important;
+			padding-left: 24px;
+			padding-right: 24px;
+			@media (min-width: $breakpoint) {
+			  padding-left: 48px;
+			  padding-right: 48px;
+			}
+	 	}
+	 	.block-system > form {
+			padding: 0;
+			border: 0 none;
+			box-shadow: none;
+			background: transparent;
+	 	}
+	 	.form-type--text, .form-type--password, .form-type--email {
+			input {
+		 		width: 100%;
+			}
+	 	}
+	 	.form-element {
+			width: 100%;
+			padding: 1rem;
+	 	}
+	 	.more-links {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			padding: 25px 0;
+			margin-top: 25px;
+			border-top: 1px solid $border-color;
+			a{
+				text-transform: uppercase;
+				font-weight: 500;
+				font-size: 13px;
+			}
+	 	}
+	 	.help{
+			display: block!important;
+			.block-local-tasks-block{
+				display: none;
+			}
+	 	}
+  	}
+  	.user-login-form{
+	 	.form-actions{
+			display: block;
+			margin-bottom: 0;
+	 	}
+  	}
+  	.page-wrapper {
+	 	margin-top: 0;
+  	}
+}
+
+.user-login-form, .user-register-form, .user-form, .user-pass{
+  .form-item{
+	 margin-bottom: 15px;
+  }
+}
+
+#user-login-form, #user-register-form {
+	input[type="text"], 
+	input[type="tel"],
+	input[type="password"],
+	input[type="email"],
+	textarea, select{
+		background-color: #fff;
+		border: 1px solid $border-color;
+		padding: 0 15px;
+		border-radius: 4px;
+		color: $body-color;
+		line-height: 46px;
+		max-width: 100%;
+		&:focus, &:active, &:hover{
+			outline: none;
+		}
+	}
+  	.form-item:not(.js-form-type-checkbox){
+	 	label{
+			width: 100%;
+			font-weight: 600;
+			color: $black;
+			margin-bottom: 0;
+			font-family: $headings-font-family;
+	 	}
+  	}
+  	.js-form-type-managed-file{
+  		.form-submit{
+  			padding: 6px 12px;
+  			font-size: 12px;
+  		}
+  	}
+}
+
+#user-register-form{
+	padding: 0 0 35px;
+}
+

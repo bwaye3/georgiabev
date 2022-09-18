@@ -1,0 +1,104 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% if title %}
+	<h3>{{ title }}</h3>
+{% endif %}
+
+{% if taxonomy_id == 'listing_category' or taxonomy_id == 'listing_locations' or taxonomy_id == 'amenities' %} {# Taxonomy Listing Category, Location #}
+	 
+	{% if attributes -%}
+		<div{{ attributes }}>
+	{% endif %}
+		 
+		{% if title %}
+			<h3>{{ title }}</h3>
+		{% endif %}
+		<div class="gva-listings-map-page">
+			<div class="listings-map-taxonomy map-layout-wrapper half_map-wrapper">
+
+				<div class="half_map-row views-map-one">
+					
+					<div class="half_map-col col-results main-listing-wrapper">
+						<div class="content-inner">
+							<div class="lt-map-action">
+								<div class="control-search-2" style="float:left;"><a href="{{ path('<front>') }}{{gva_theme_setting('listing_search_action')}}">{{ "Search Filters Page"|t }}</a></div>
+								<div class="control-map">
+									<div class="control-hover-show-map pretty p-switch p-fill">
+										<input type="checkbox" id="hover-show-map"/>
+										<div class="state">
+												<label>{{'Hover Show Map'|t}}</label>
+										</div>
+									</div>
+									<div class="control-reset-map"><a href="#" class="gva-reset-map"><i class="la la-map-marker"></i>{{'Reset Map'|t}}</a></div>
+								</div>  
+							</div>  
+
+							<div class="listing-items gva-view-grid-inner lg-block-grid-3 md-block-grid-3 sm-block-grid-2 xs-block-grid-2" data-drupal-views-infinite-scroll-content-wrapper-gvaloadmorelistings>
+								{% set i = 0 %}
+								{% for row in rows %}
+										<div class="item-columns">
+											<div class="listing-item-wrapper" data-marker="{{i}}">{{ row.content|raw }}</div>
+										</div>
+								{% set i = i + 1 %}
+								{% endfor %}
+							</div>
+						</div>	
+					</div> 
+
+					<div class="half_map-col col-map main-map-wrapper">
+						<div class="map-full-height map-sticky listing-map-sticky">
+					  		<div id="listing-main-map" class="listing-main-map"></div>
+						</div>
+					</div>
+
+				</div>  
+			</div>  
+		</div>
+	{% if attributes -%}
+			</div>
+	{% endif %}
+
+
+	<script type="text/javascript">
+		jQuery(document).ready(function(){
+			map_init();
+		});
+	</script>
+
+
+{% else %} {# End Taxonomy Listing Category, Location  #}
+
+	{% set i = 0 %}
+	<div class="categories-view-content view-content-wrap post-style-grid box">
+		{% for row in rows %}
+			{% set i = i + 1 %}
+			{% if i % 2 == 1 %} 
+				<div class="row">
+			{% endif %} 
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+					{{ row.content }}
+				</div>
+			{% if (i % 2 == 0 or i == rows|length)  %} 
+				</div>
+			{% endif %} 
+		{% endfor %}
+	</div>
+{% endif %}

@@ -1,0 +1,6 @@
+<?php
+
+function ziston_sub_preprocess_html(&$variables) {
+  $variables['#attached']['library'][] = 'ziston_sub/ziston_sub.skin.default';
+
+}

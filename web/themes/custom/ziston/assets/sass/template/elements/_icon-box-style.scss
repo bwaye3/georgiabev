@@ -1,0 +1,224 @@
+.gsc-icon-box-style{
+	&.style-1{
+		position: relative;
+		@include clearfix();
+		text-align: left;
+		margin-bottom: 30px;
+		.icon-box-content{
+			text-align: center;
+			padding: 50px 30px;
+			transition: all 0.35s;
+			border-radius: 4px;
+			@include media-breakpoint-down(lg){
+				border: 1px solid $border-color;
+			}
+			.box-icon{
+				display: inline-block;
+				position: relative;
+				transition: all 0.35s;
+				margin-bottom: 20px;
+				i{
+					color: $theme-color;
+					transition: all 0.35s;
+					position: relative;
+					z-index: 11;
+					height: auto;
+					font-size: 60px;
+				}
+				img{
+					max-width: 60px;
+				}
+			}
+		}
+		.box-content{
+			.title{
+				color: $black;
+				font-size: 22px;
+				line-height: 30px;
+				margin: 0 0 18px;
+				display: block;
+				transition: all 0.35s;
+				@include media-breakpoint-down(lg){
+					font-size: 20px;
+				}
+			}
+			.content-inner{
+				margin-top: 40px;
+				padding-top: 40px;
+				position: relative;
+				.desc{
+					font-weight: 500;
+					transition: all 0.35s;
+				}
+			}
+		}
+		.link-overlay{
+			@include size(100%, 100%);
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 1;
+		}
+		&:hover, &.active{
+			.icon-box-content{
+				background: $theme-color;
+				.icon-inner{
+				 	.box-icon{
+						img, i{
+							color: $white;
+							fill: $white;
+							animation: beat 1.5s ease 0s infinite;
+						}
+				 	}
+				}
+				.box-content{
+				 	.title{
+						color: $white;
+				 	}
+				 	.desc{
+						color: $white;
+				 	}
+				}
+			}
+		}
+	}
+	&.style-2{
+		position: relative;
+	 	@include clearfix();
+	 	text-align: left;
+		box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.07);
+		margin-top: 50px;
+		 .box-icon{
+			display: inline-block;
+			background: $theme-color;
+			text-align: center;
+			transition: all 0.35s;
+			@include size(100px, 100px);
+			line-height: 100px;
+			border-radius: 50%;
+			position: absolute;
+			z-index: 9;
+			top: -50px;
+			left: 50%;
+			margin-left: -50px;
+			padding-top: 12px;
+			i{
+			  color: $white;
+			  transition: all 0.35s;
+			  position: relative;
+			  z-index: 11;
+			  height: auto;
+			  font-size: 52px;
+			  &.flaticon-location-pin{
+			  	padding-left: 14px;
+			  }
+			}
+			img{
+				max-width: 52px;
+			}
+		 }
+		 .box-content{
+			margin-top: 20px;
+			position: relative;
+			padding: 65px 30px 35px;
+			text-align: center;
+			overflow: hidden;
+			border-radius: 4px;
+			border-bottom: 2px solid transparent;
+			background: $white;
+			z-index: 1;
+			.title{
+				color: $black;
+				font-size: 20px;
+				display: block;
+				line-height: 1.4;
+				margin-bottom: 8px;
+				position: relative;
+				z-index: 11;
+			}
+			.desc{
+				position: relative;
+				z-index: 11;
+			}
+			.box-icon-hover{
+				font-size: 180px;
+				color: #F0F3F6;
+				position: absolute;
+				bottom: -105px;
+				right: -100px;
+				z-index: 1;
+				transform: rotate(-30deg) scale(0.6);
+				opacity: 0;
+				transition: all 0.35s;
+			}
+		}
+		&:hover, &.active{
+			.box-content{
+				border-bottom-color: $theme-color;
+				.box-icon-hover{
+					transform: rotate(-30deg) scale(1);
+					opacity: 1;
+					right: -36px;
+				}
+			}
+		}
+	}
+	&.style-3{
+		position: relative;
+		@include clearfix();
+		text-align: left;
+		margin-bottom: 30px;
+		.icon-box-content{
+			display: flex;
+			.box-icon{
+				display: inline-block;
+				position: relative;
+				transition: all 0.35s;
+				padding-right: 26px;
+				padding-top: 6px;
+				i{
+					color: $theme-color;
+					transition: all 0.35s;
+					position: relative;
+					z-index: 11;
+					height: auto;
+					font-size: 60px;
+				}
+				img{
+					max-width: 60px;
+				}
+			}
+		}
+		.box-content{
+			.title{
+				color: $black;
+				font-size: 20px;
+				line-height: 36px;
+				margin: 0 0 6px;
+				display: block;
+				transition: all 0.35s;
+				@include media-breakpoint-down(lg){
+					font-size: 18px;
+				}
+			}
+			.content-inner{
+				margin-top: 40px;
+				padding-top: 40px;
+				position: relative;
+				.desc{
+					font-weight: 500;
+					transition: all 0.35s;
+				}
+			}
+		}
+	}
+	&:hover, &.active{
+		.icon-inner{
+			.box-icon{
+				i{
+					animation: beat 1.5s ease 0s infinite;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,87 @@
+global-styling:
+  version: VERSION
+  header: true
+  css:
+    theme:
+      //fonts.googleapis.com/css2?family=Montserrat:wght@00;200;400;500;600&display=swap: { type: external }
+      assets/css/font-awesome/css/all.min.css: {}
+      assets/css/line-awesome/css/line-awesome.min.css: {}
+      assets/css/icon/flaticon.css: {}
+      assets/vendor/owl-carousel/assets/owl.carousel.min.css: {}
+      assets/vendor/owl-carousel/assets/owl.theme.default.min.css: {}
+      assets/vendor/ytplayer/css/jquery.mb.YTPlayer.min.css: {}
+      assets/vendor/magnific/magnific-popup.css: {}
+      assets/vendor/scroll/jquery.mCustomScrollbar.min.css: {}
+      assets/css/bootstrap.css: {}
+      assets/css/template.css: {}
+  js:
+    assets/vendor/jquery-migrate.min.js: {}
+    assets/js/bootstrap.min.js: {}
+    assets/js/imagesloader.min.js: {}
+    assets/vendor/jquery.appear.js: {}
+    assets/vendor/owl-carousel/owl.carousel.js: {}
+    assets/vendor/waypoint.js: {}
+    assets/vendor/count-to.js: {}
+    assets/vendor/masonry.pkgd.min.js: {}
+    assets/vendor/isotope.pkgd.min.js: {}
+    assets/vendor/aos.js: {}
+    assets/vendor/sticky-kit.js: {}
+    assets/vendor/ytplayer/js/jquery.mb.YTPlayer.min.js: {}
+    assets/vendor/magnific/jquery.magnific-popup.min.js: {}
+    assets/vendor/scroll/jquery.mCustomScrollbar.min.js: {}
+    assets/js/main.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+
+listing_init:
+  version: VERSION
+  header: true
+  css:
+    theme:
+      assets/vendor/leaflet/css/leaflet.css: {}
+      assets/vendor/leaflet/css/MarkerCluster.css: {}
+      assets/vendor/leaflet/css/MarkerCluster.Default.css: {}
+  js:
+    assets/vendor/leaflet/js/leaflet.js: {}
+    assets/vendor/leaflet/js/leaflet.markercluster.js: {}
+    assets/js/listing.js: {}
+
+listing_init.gmap:
+  version: VERSION
+  header: true
+  js:
+    assets/vendor/leaflet/Leaflet.GoogleMutant.js: {}
+  dependencies:
+    - ziston/ziston.gmap_api
+    
+gavias-ziston-admin:
+  version: VERSION
+  css: 
+    theme: 
+      assets/css/theme-settings.css: {}
+      assets/vendor/colorpicker/css/colorpicker.css: {}
+      assets/vendor/codemirror/lib/codemirror.css: {}
+      assets/vendor/codemirror/addon/hint/show-hint.css: {}
+  js:
+      assets/vendor/jquery-migrate.min.js: {}
+      assets/vendor/colorpicker/js/colorpicker.js: {}
+      assets/vendor/codemirror/lib/codemirror.js: {cope: footer}
+      assets/vendor/codemirror/mode/css/css.js: {cope: footer}
+      assets/js/customize.js: {}
+
+maintenance_page:
+  version: VERSION
+  css:
+    theme:
+      assets/css/maintenance-page.css: {}
+
+views-infinite-scroll:
+  version: VERSION
+  js:
+    assets/js/override/infinite-scroll.js : {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupal.debounce

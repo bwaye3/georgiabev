@@ -1,0 +1,281 @@
+.gsc-call-to-action{
+	.title{
+		font-weight: 700;
+		font-size: 42px;
+		margin: 0;
+		@include media-breakpoint-down(md){
+			&.fsize-00{
+				font-size: 34px;
+			}
+		}
+	}
+	.sub-title{
+		color: $theme-color;
+		font-family: $font-second;
+		font-size: 34px;
+		font-weight: 400;
+		text-transform: capitalize;
+	}
+
+	.video-inner{
+		margin-bottom: 45px;
+		.link-video{
+			display: inline-block;
+			font-size: 24px;
+			color: $white;
+			background: $theme-color;   
+			text-align: center;
+			position: relative;
+			@include transition(all 0.35s);
+			@include size(80px, 80px);
+			line-height: 82px;
+			border-radius: 4px;
+			@include media-breakpoint-down(md){
+				@include size(60px, 60px);
+				line-height: 62px;
+			}
+			&::before{
+				position: absolute;
+				content: '';
+				left: 0;
+				top: 0;
+				height: 100%;
+				width: 100%;
+				border: 1px solid #fff;
+				opacity: 0;
+				border-radius: 4px;
+				@include animation(pulse-border-2 1.5s linear infinite);
+			}
+			&::after{
+				position: absolute;
+				content: '';
+				left: 0;
+				top: 0;
+				height: 100%;
+				width: 100%;
+				border: 1px solid #fff;
+				opacity: 0;
+				border-radius: 4px;
+				@include animation(pulse-border 1s linear infinite);
+			}
+			&:hover{
+				@include scale(0.9);
+			}
+		}
+	}
+	.button-action{
+		> a{
+			margin: 0 10px;
+			display: inline-block;
+			&:first-child{
+				margin-left: 0;
+			}
+			&:last-child{
+				margin-right: 0;
+			}
+		}
+	}
+	.desc{
+		line-height: 30px;
+	}
+	
+	&.button-right{
+		position: relative;
+		.title{
+			margin: 0 0 10px!important;
+		}
+		.heading-line{
+			margin: 16px 0;
+		}
+		.content{
+			padding-right: 170px;
+			@media(max-width: 800px){
+				padding-right: 0;
+			}
+			p{
+				margin: 0;
+			}
+		}
+		.button-action{
+			position: absolute;
+			right: 0;
+			top: 50%;
+			z-index: 1;
+			margin-top: -20px;
+			@media(max-width: 800px){
+				position: relative;
+				margin-top: 15px;
+			}
+		}
+	}
+	&.button-left{
+		position: relative;
+		text-align: right;
+		.title{
+			margin: 0 0 10px!important;
+		}
+		.heading-line{
+			margin: 16px 0;
+		}
+		.content{
+			padding-left: 210px;
+			@media(max-width: 800px){
+				padding-left: 0;
+			}
+			p{
+				margin: 0;
+			}
+		}
+		.button-action{
+			position: absolute;
+			left: 0;
+			top: 50%;
+			margin-top: -20px;
+			z-index: 1;
+			@media(max-width: 800px){
+				position: relative;
+				margin-top: 15px;
+			}
+		}
+	}
+	&.button-bottom{
+		padding: 0 0 30px;
+		.title{
+			position: relative;
+			margin-bottom: 32px;
+			@include media-breakpoint-down(md){
+				font-size: 32px;
+				margin-bottom: 20px;
+			}
+			.text-small{
+				font-size: 28px;
+				line-height: 36px;
+			}
+		}
+		.heading-line{
+			margin: 16px 0;
+		}
+		.desc{
+			font-size: 16px;
+		}
+		.button-action{
+			margin-top: 45px;
+			 @include media-breakpoint-down(md){
+				margin-top: 30px;
+			}
+		}
+		&.text-light{
+			.title{
+				&:after{
+					background: $white;
+				}
+			}
+		}
+	}
+	&.button-bottom-right{
+		padding: 30px 0;
+		text-align: right;
+		@include media-breakpoint-down(md){
+			padding: 0;
+		}
+		.title{
+			position: relative;
+			margin-top: 0;
+			letter-spacing: 0;
+			font-weight: 700;
+			margin-bottom: 32px;
+			&:after{
+				left: auto;
+				right: 0;
+			}
+			.text-small{
+				font-size: 30px;
+			}
+		}
+		.desc{
+			font-size: 16px;
+		}
+		.button-action{
+			margin-top: 20px;
+		}
+		&.text-light{
+			.title{
+				&:after{
+					background: $white;
+				}
+			}
+		}
+	}
+	&.button-center{
+		text-align: center;
+		margin: 0 auto;
+		.sub-title{
+			font-size: 70px;
+			line-height: 70px;
+			@media(max-width: 1024px){
+				font-size: 50px;
+				line-height: 50px;
+			}
+			@media(max-width: 992px){
+				font-size: 40px;
+				line-height: 40px;
+			}
+		}
+		.title{
+			font-size: 60px;
+			position: relative;
+			margin-bottom: 10px;
+			margin-top: 0;
+			@media(max-width: 1024px){
+				font-size: 50px;
+			}
+			@media(max-width: 992px){
+				font-size: 40px;
+			}
+		}
+		.desc{
+			margin-top: 20px;
+		}
+		.button-action{
+			margin-top: 45px;
+		}
+		.content{
+			margin: 0 auto;
+		}
+		&.text-light{
+			.title{
+				&:after{
+					background: $white;
+				}
+			}
+		}
+	}
+	&.text-light{
+		.content{
+			color: $white;
+			.title{
+				color: $white;
+			}
+			.desc *{
+				opacity: 0.9;
+			}
+		}
+		.subtitle{
+			opacity: 0.9;
+		}
+	}
+	&.text-light-2{
+		.content{
+			color: $white;
+			.title{
+				color: $white;
+			}
+			.sub-title{
+				color: $white;
+			}
+			.desc *{
+				opacity: 0.9;
+			}
+		}
+	}
+} 

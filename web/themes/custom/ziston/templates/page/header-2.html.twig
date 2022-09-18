@@ -1,0 +1,65 @@
+<header id="header" class="header-default header-2">
+
+	{% include '@ziston/page/parts/topbar.html.twig' %}
+
+	{% set class_sticky = '' %}
+	{% if sticky_menu == 1 %}
+	{% set class_sticky = 'gv-sticky-menu' %}
+	{% endif %}  
+
+	<div class="header-main {{ class_sticky }}">
+	 	<div class="container header-content-layout">
+			<div class="header-main-inner p-relative">
+				<div class="header-content-inner">
+					<div class="branding">
+						{% if page.branding %}
+							{{ page.branding }}
+						{% endif %}
+					</div>
+
+					{% set class_main_menu = '' %}
+					{% if hide_header_button_link != 'hide' %}
+						{% set class_main_menu = ' has-header-button' %}
+					{% endif %}  
+
+				 	<div class="header-inner clearfix">
+						<div class="main-menu{{ class_main_menu }}">
+							<div class="area-main-menu">
+								<div class="area-inner">
+									<div class="gva-offcanvas-mobile">
+										<div class="close-offcanvas hidden"><i class="fa fa-times"></i></div>
+										<div class="main-menu-inner">
+											{% if page.main_menu %}
+												{{ page.main_menu }}
+											{% endif %}
+										</div>
+										{% if page.offcanvas %}
+											<div class="after-offcanvas hidden">
+												{{ page.offcanvas }}
+											</div>
+										{% endif %}
+									</div>
+									<div id="menu-bar" class="menu-bar menu-bar-mobile d-xl-none">
+										<span class="one"></span>
+										<span class="two"></span>
+										<span class="three"></span>
+									</div>
+									{% if hide_header_button_link != 'hide' %}
+										<div class="header-button">
+											{% if custom_account %}
+													<a href="{{ base_url }}{{ header_button_link }} ">{{ header_button_text }}</a>
+											{% else %}
+													<a href="{{ path('user.login') }}">{{ header_button_text }}</a>
+											{% endif %}
+										</div>
+									{% endif %} 
+								</div>
+							</div>
+						</div>  
+					</div> 
+				</div>
+			</div>
+	 	</div>
+	</div>
+</header>
+

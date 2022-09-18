@@ -1,0 +1,114 @@
+html{
+  overflow-x: hidden!important;
+  font-size: 16px; 
+}
+body{
+  	overflow: hidden!important;
+  	position: relative;
+  	&.boxed{ 
+	 	background-color: #EAF1F7;  
+	 	div.gva-body-wrapper{
+			background: $white;
+			max-width: 1440px;  
+			margin: 0 auto;
+			box-shadow: 0px 2px 6px 2px rgba(0, 0, 0, 0.05);
+			position: relative;
+	 	}
+  	}
+  	.body-page{
+	 	background-color: #fff;
+  	}
+  	&.logged-in{
+	 	&.toolbar-horizontal{ 
+			.header-1{
+		  		margin-top: 39px;
+			}
+	 	}
+  	}
+  	&.bg-dark{
+	 	background: #EFF1F2;
+	 	.gva-body-page{
+			background: #EFF1F2;
+	 	}
+  	}
+  	&.layout-with-sidebar{
+  		.main-page{
+  			padding: 25px 0 60px;
+  		}
+  	}
+}
+
+.region-main-page-content{
+  &.layout-with-sidebar{
+   padding: 35px 0 50px;
+  } 
+}
+
+
+#page-main-content{
+  min-height: 360px;
+  @include media-breakpoint-down(sm){
+	 min-height: 100px;
+  }
+}
+
+.main-menu{
+  .area-main-menu{
+	 .area-inner{
+		.block{
+		  margin-bottom: 0;
+		}
+	 }  
+  }
+}  
+
+.sidebar{
+  position: relative;
+}
+
+#footer{
+  color: #abafb5; 
+  background: url('#{$base-theme-image-path}/bg-footer.png') no-repeat center bottom #161C26; 
+  a{
+	 color: #abafb5;
+	 &:hover, &:focus{
+		color: $theme-color;
+	 }
+  }
+  .before-footer{
+	 padding: 0;
+  }
+  .footer-center{
+	 padding: 100px 0 80px;
+	 @include media-breakpoint-down(lg){
+		padding: 80px 0 60px;
+	 }
+	 @include media-breakpoint-down(md){
+		padding: 60px 0 40px;
+	 }
+  }
+
+  .block{
+	 padding-bottom: 0;
+	 margin-bottom: 0;
+	 .block-title{
+		span{
+		  color: $white!important;
+		  &:after, &:before{
+			 display: none;
+		  }
+		}
+	 }
+  }
+  .copyright{
+	 font-weight: 500;
+	 background: #11161F;
+	 border-top: 1px solid rgba(255, 255, 255, 0.1);
+	 padding: 30px 0;
+  }
+  @include media-breakpoint-down(lg){
+	 .footer-column{
+		margin-bottom: 35px;
+	 }
+  }
+}

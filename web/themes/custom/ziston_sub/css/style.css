@@ -1,0 +1,66 @@
+/* Georgia Bev CSS Overrides */
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  font-weight: 500;
+}
+
+/* Header */
+.header-default .header-main .header-content-inner .branding .site-branding-logo img {
+  max-width: 100%;
+}
+
+/*
+.header-default .header-main .header-content-inner .branding {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 360px;
+  flex: 0 0 360px;
+  width: 360px;
+}
+
+.header-default .header-main .header-content-inner .header-inner {
+  -ms-flex: 0 0 calc(100% - 360px);
+  flex: 0 0 calc(100% - 360px);
+}
+*/
+
+/* Navigation */
+.navigation .gva_menu > li > a {
+  font-weight: 500;
+  color: #5A5C58 !important;
+  padding: 0 10px;
+  font-size: .9rem;
+  line-height: 1.2;
+}
+
+.nav-tabs > li > a {
+  font-weight: 500;
+}
+/* Breadcrumb */
+.breadcrumb-content-inner .gva-block-breadcrumb .page-title {
+  font-weight: 400;
+}
+
+.breadcrumb-content-inner .breadcrumb-content-main {
+  padding: 90px 15px 50px;
+}
+
+.breadcrumb-content-inner .gva-block-breadcrumb.text-white .page-title, .breadcrumb-content-inner .gva-block-breadcrumb.text-light .page-title {
+  color: #52808e;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.08);
+}
+
+.breadcrumb-content-inner .gva-block-breadcrumb .breadcrumb-links {
+  display: none;
+}
+
+/* Front */
+.frontpage .gbb-row .bb-inner {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+#front-logos img {
+  padding: 1rem;
+}

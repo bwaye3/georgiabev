@@ -1,0 +1,96 @@
+	/*
+  	Flaticon icon font: Flaticon
+  	Creation date: 24/09/2020 08:12
+  	*/
+
+@font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff2") format("woff2"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+  font-family: Flaticon;
+  font-style: normal;
+}
+[class^="flaticon-"], [class*=" flaticon-"]{
+  line-height: 1;
+  display: inline-block;
+}
+.elementor-icons-manager__tab__item__icon.fi{font-size: 40px;}
+
+.flaticon-health:before { content: "\f100"; }
+.flaticon-cutlery:before { content: "\f101"; }
+.flaticon-cocktail:before { content: "\f102"; }
+.flaticon-skincare:before { content: "\f103"; }
+.flaticon-shop:before { content: "\f104"; }
+.flaticon-car:before { content: "\f105"; }
+.flaticon-suitcase:before { content: "\f106"; }
+.flaticon-shopping-bags:before { content: "\f107"; }
+.flaticon-restaurant:before { content: "\f108"; }
+.flaticon-selection:before { content: "\f109"; }
+.flaticon-delete:before { content: "\f10a"; }
+.flaticon-exploration:before { content: "\f10b"; }
+.flaticon-calling:before { content: "\f10c"; }
+.flaticon-shopping-cart:before { content: "\f10d"; }
+.flaticon-shopping-cart-1:before { content: "\f10e"; }
+.flaticon-loupe:before { content: "\f10f"; }
+.flaticon-magnifying-glass:before { content: "\f110"; }
+.flaticon-heart:before { content: "\f111"; }
+.flaticon-directory:before { content: "\f112"; }
+.flaticon-clipboard:before { content: "\f113"; }
+.flaticon-discount:before { content: "\f114"; }
+.flaticon-plane:before { content: "\f115"; }
+.flaticon-weightlifting:before { content: "\f116"; }
+.flaticon-scissors:before { content: "\f117"; }
+.flaticon-quote:before { content: "\f118"; }
+.flaticon-focus:before { content: "\f119"; }
+.flaticon-left-arrow:before { content: "\f11a"; }
+.flaticon-right-arrow-1:before { content: "\f11b"; }
+.flaticon-purse:before { content: "\f11c"; }
+.flaticon-credit-card:before { content: "\f11d"; }
+.flaticon-group:before { content: "\f11e"; }
+.flaticon-wifi:before { content: "\f11f"; }
+.flaticon-coupon:before { content: "\f120"; }
+.flaticon-mother:before { content: "\f121"; }
+.flaticon-parking-sign:before { content: "\f122"; }
+.flaticon-paw:before { content: "\f123"; }
+.flaticon-player:before { content: "\f124"; }
+.flaticon-elevator:before { content: "\f125"; }
+.flaticon-table:before { content: "\f126"; }
+.flaticon-reception:before { content: "\f127"; }
+.flaticon-cctv:before { content: "\f128"; }
+.flaticon-wheelchair:before { content: "\f129"; }
+.flaticon-check:before { content: "\f12a"; }
+.flaticon-comment:before { content: "\f12b"; }
+.flaticon-towel:before { content: "\f12c"; }
+.flaticon-towels:before { content: "\f12d"; }
+.flaticon-shampoo:before { content: "\f12e"; }
+.flaticon-towels-1:before { content: "\f12f"; }
+.flaticon-hotel-sign:before { content: "\f130"; }
+.flaticon-machine:before { content: "\f131"; }
+.flaticon-room-service:before { content: "\f132"; }
+.flaticon-jacuzzi:before { content: "\f133"; }
+.flaticon-single-bed:before { content: "\f134"; }
+.flaticon-hotel:before { content: "\f135"; }
+.flaticon-star-1:before { content: "\f136"; }
+.flaticon-star:before { content: "\f137"; }
+.flaticon-star-2:before { content: "\f138"; }
+.flaticon-email:before { content: "\f139"; }
+.flaticon-phone:before { content: "\f13a"; }
+.flaticon-plus:before { content: "\f13b"; }
+.flaticon-location-pin:before { content: "\f13c"; }

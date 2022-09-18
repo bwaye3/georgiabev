@@ -1,0 +1,212 @@
+{%
+	set classes = [
+		'node',
+		'node-detail',
+		'node--type-' ~ node.bundle|clean_class,
+		node.isPromoted() ? 'node--promoted',
+		node.isSticky() ? 'node--sticky',
+		not node.isPublished() ? 'node--unpublished',
+		view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+		'clearfix',
+	]
+%}
+{% set conAddress %}{{ node.field_listing_address.value }}{% endset %}
+
+<article{{ attributes.addClass(classes).addClass('node-listing-single') }}>
+	<div class="listing-top">
+		<div id="listing-home" class="listing-gallery before-help-region">
+			{{ content.field_listing_gallery }}
+		</div>
+		
+		<div class="container listing-top-content">
+			<div class="content-inner">
+				<div class="top-left">
+					<div class="lt-single-cat">{{ content.field_listing_category }}</div>
+					<h1{{ title_attributes.addClass('post-title') }}>{{ label }}</h1>
+					<div class="tagline">{{ node.field_listing_tagline.value }}</div>
+				</div>
+				<div class="top-right">
+					<div class="listing-action">
+						
+						{% if node.field_listing_phone.value %}
+							<a href="tell:{{ node.field_listing_phone.value }}"><i class="fas fa-phone-volume"></i>{{ node.field_listing_phone.value }}</a>
+						{% endif %}
+						<a class="btn-second" href="#listing-comment"><i class="fas fa-comments"></i>Comments</a>
+					</div>
+					<div class="listing-price"><span class="label">{{'Price'|t}}&nbsp;&nbsp;</span>{{ node.field_listing_price.value }}</div>
+				</div>
+			</div>    
+		</div> 
+
+		<div class="listing-nav sticky-listing-nav">
+			<div class="listing-nav-inner">
+				<div class="listing-nav-inner-inner">
+					<div class="container">
+						<div class="row">
+							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+								<ul>
+									<li><a href="#listing-home">{{'Home'|t}}</a></li>
+									<li><a href="#listing-description">{{'Description'|t}}</a></li>
+									<li><a href="#listing-amenties">{{'Listing Amenties'|t}}</a></li>
+									<li><a href="#listing-video">{{'Video'|t}}</a></li>
+									<li><a href="#listing-comment">{{'Comment'|t}}</a></li>
+								</ul>
+							</div>
+						</div>  
+					</div>
+				</div>  
+			</div>  
+		</div>  
+
+	</div>  
+
+	<div class="container">
+		<div class="row">
+			<div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 col-xs-12">
+				<div class="listing-content-main">
+					
+					{% if content.body|render %}
+						<div class="listing-info-block listing-description" id="listing-description">
+							<div class="block-content">
+								{{ content.body }}
+							</div>
+						</div>  
+					{% endif %}  
+
+					{% if content.field_listing_amenities|render %}
+						<div class="listing-info-block listing-amenties" id="listing-amenties">
+							<h3 class="title">{{ 'Listing Amenities'|t }}</h3>
+							<div class="block-content">
+								{{ content.field_listing_amenities }}
+							</div>  
+						</div> 
+					{% endif %}  
+
+					<div class="listing-info-block listing-video" id="listing-video">
+						<h3 class="title">{{ 'Video'|t }}</h3>
+						<div class="block-content">
+							{{ listing_video|raw }}
+						</div>  
+					</div>
+
+					{% if content.field_listing_tags|render %}
+						<div class="listing-info-block listing-tags" id="listing-video">
+							<h3 class="title">{{ 'Tags'|t }}</h3>
+							<div class="block-content">
+								{{ content.field_listing_tags }}
+							</div>
+						</div>
+					{% endif %}
+
+					{% if content.comment|render %}
+						<div class="listing-info-block listing-comment" id="listing-comment">
+							<div class="block-content">
+								<div id="node-single-comment">
+									{{ content.comment }}
+								</div>
+							</div>
+						</div>
+					{% endif %}  
+
+				</div>  
+			</div>
+			<div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12">
+				<div class="listing-content-main listing-sidebar">
+					
+					<div class="lt-block-second lt-map">
+						<div class="listing-location-taxonomy">{{ content.field_listing_location }}</div>
+						<div class="listing-main-map" id="listing-main-map"></div>
+						<div class="listing-items hidden">
+							<div class="listing-block">
+								<div class="listing-data hidden">
+									{{ content.field_listing_category }}
+									<span class="data-lat">{{node.field_listing_map.lat}}</span>
+									<span class="data-lon">{{node.field_listing_map.lon}}</span>
+									<span class="data-html">
+										<span class="gva-map-content-popup">
+											<span class="image">
+												<img src="{{ node.field_listing_image.entity.uri.value | image_style('small') }}" />
+											</span>
+											<span class="content-inner">
+												<span class="title"><a href="{{ url }}" rel="bookmark">{{ node.title.value }}</a></span>
+												{% if node.field_listing_address.value %}
+													<span class="address"><i class="icon la la-map"></i>{{ conAddress|striptags }}</span>
+												{% endif %}
+												{% if node.field_listing_phone.value %}
+													<span class="phone"><i class="icon la la-phone"></i>{{ node.field_listing_phone.value }}</span>
+												{% endif %}
+											</span>  
+										</span>
+									</span>
+								</div>
+							</div>  
+						</div>
+					</div>
+
+					<div class="lt-block-second business-info">
+						<div class="block-content">
+							<ul class="business-info">
+
+								{% if conAddress %}
+									<li><span class="address"><i class="icon la la-map"></i>{{ conAddress|striptags }}</span></li>
+								{% endif %}
+
+								{% if content.field_listing_email|render %}
+									<li><a href="mailto:{{node.field_listing_email.value}}">
+										<i class="icon la la-envelope"></i>{{ node.field_listing_email.value }}
+									</a></li>
+								{% endif %}
+
+								{% if content.field_listing_phone|render %}
+									<li><i class="icon la la-phone"></i>{{ node.field_listing_phone.value }}</li>
+								{% endif %}  
+
+								{% if content.field_listing_website|render %}
+									<li><span><i class="icon la la-globe"></i>{{ node.field_listing_website.value }}</span></li>
+								{% endif %}  
+
+							</ul>
+
+							<ul class="listing-socials">
+
+								{% if node.field_listing_facebook.value %}
+									<li><a href="{{ node.field_listing_facebook.value }}"><i class="icon la la-facebook"></i></a></li>
+								{% endif %}
+
+								{% if node.field_listing_google.value %}
+									<li><a href="{{ node.field_listing_google.value }}"><i class="icon la la-google"></i></a></li>
+								{% endif %}
+
+								{% if node.field_listing_linkedin.value %}
+									<li><a href="{{ node.field_listing_linkedin.value }}"><i class="icon la la-linkedin"></i></a></li>
+								{% endif %}
+
+								{% if node.field_listing_twitter.value %}
+									<li><a href="{{ node.field_listing_twitter.value }}"><i class="icon la la-twitter"></i></a></li>
+								{% endif %}
+
+							</ul>
+						</div>  
+					</div>
+
+					{% if content.field_listing_time|render %}
+						<div class="lt-block-second business-hours">
+							<h3 class="title">{{ 'Business Hours'|t }}</h3>
+							<div class="block-content">
+								{{ content.field_listing_time }}
+							</div>
+						</div>
+					{% endif %}
+
+					{{ listing_sidebar }}
+
+				</div>  
+
+			</div>
+		</div>
+	</div>  
+</article>
+<script>
+	map_init('single');
+</script>
+
