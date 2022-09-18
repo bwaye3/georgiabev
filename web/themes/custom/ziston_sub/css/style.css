@@ -187,5 +187,13 @@ div#block-twitterblock h2.block-title::before {
 }
 
 .btn-theme-small {
+  font-weight: 500 !important;
+}
+
+.gva-user-region.show .user-content a {
+  color: #de4928;
+}
+.gsc-heading.style-1 .title {
   font-weight: 500;
+  color: #41787d !important;
 }
