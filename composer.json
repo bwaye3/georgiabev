@@ -24,6 +24,7 @@
         "drupal/core-recommended": "^9.4",
         "drupal/core-vendor-hardening": "^9.4",
         "drupal/ctools": "3.11",
+        "drupal/devel": "^4.1",
         "drupal/dropdown_language": "^3.0",
         "drupal/easy_breadcrumb": "^2.0",
         "drupal/features": "^3.12",

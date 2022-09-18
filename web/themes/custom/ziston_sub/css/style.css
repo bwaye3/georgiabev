@@ -131,11 +131,61 @@ div#block-twitterblock h2.block-title::before {
 }
 
 #footer .copyright {
-  background: #DE4928;
-  border-top: 1px solid rgb(222, 73, 40);
+  background: #5b5d59;
+  border-top: 1px solid rgb(91 93 89);
   color: white;
+  padding: 20px 0;
 }
 
 .node-135 .gbb-row .bb-inner {
   padding-top: 0;
+}
+
+.topbar {
+  background: #de4928;
+  padding: 0;
+  font-size: 12px;
+}
+
+.topbar .topbar-wrapper .topbar-content a {
+  color: white;
+}
+
+.flaticon-magnifying-glass:before {
+  color: white;
+}
+
+#footer a {
+  color: white;
+}
+
+#footer a:hover {
+  color: white !important;
+  text-decoration: underline !important;
+}
+
+.gabev-icon img {
+  vertical-align: middle;
+  top: -2px !important;
+  margin: 0 3px 0 0;
+  position: relative;
+}
+
+.gabev-icon a {
+  color: #de4928;
+}
+
+.gabev-icon a:HOVER {
+  color: black;
+}
+
+#listing-main-map .gva-icon-map .icon-map .icon-cat {
+  content: '';
+  background: url(../images/ga-state-trans.png) no-repeat center center;
+  background-size: auto;
+  background-size: 30px 30px;
+}
+
+.btn-theme-small {
+  font-weight: 500;
 }

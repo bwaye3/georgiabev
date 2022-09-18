@@ -1,0 +1,5 @@
+{% for item in items %}
+    <div class="gabev-icon mb-1">
+        <img src="{{ base_path ~ directory }}/images/ga-state.png" alt="{{ 'georgia beverage state'|t }}" height="20px" width="20px"> {{ item.content }}
+    </div>
+{% endfor %}

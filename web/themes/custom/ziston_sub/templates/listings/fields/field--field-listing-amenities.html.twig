@@ -1,0 +1,8 @@
+{% for item in items %}
+   <div {{ attributes.addClass('amenity-item') }}>
+      {% if item.content['#options'].entity.field_amenities_icon.value %}
+         <i class="icon {{ item.content['#options'].entity.field_amenities_icon.value }}"></i>
+      {% endif %}
+      {{ item.content }}
+   </div>
+{% endfor %}

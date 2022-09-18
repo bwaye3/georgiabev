@@ -1,0 +1,76 @@
+{%
+	set classes = [
+		'node',
+		'node-detail',
+		'node--type-' ~ node.bundle|clean_class,
+		node.isPromoted() ? 'node--promoted',
+		node.isSticky() ? 'node--sticky',
+		not node.isPublished() ? 'node--unpublished',
+		view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+		'clearfix',
+	]
+%}
+{% set conAddress %}{{ node.field_listing_address.value }}{% endset %}
+{% set conVideo %}{{ node.field_listing_video.value }}{% endset %}
+
+<div class="listing-block teaser_2">
+	<div class="listing-image text-center">
+		{{ content.field_listing_image }}
+		<span class="show-in-map"><a href="#" title="{{'Show In Map'|t}}"><i class="la la-map-marker"></i></a></span>
+		<div class="listing-preview">
+			{% if content.field_listing_gallery %}
+				<div class="preview-gallery">{{ content.field_listing_gallery }}</div>
+			{% endif %}  
+			{% if content.field_listing_video|render %}
+				<div class="preview-video">
+					<a class="popup-video" href="{{ conVideo|trim }}"><i class="icon la la-camera"></i></a>
+				</div>
+			{% endif %}
+		</div>  
+	</div>
+	
+	<div class="listing-content clearfix">  
+		<div class="listing-info">
+			<h3 class="title"><a href="{{ url }}" rel="bookmark">{{ label }}</a></h3>
+			<div class="tagline">{{ node.field_listing_tagline.value }}</div>
+			<div class="listing-meta">
+				{% if node.field_listing_address.value %}
+					<div class="address"><i class="icon fas fa-map-marker-alt"></i>{{ conAddress|striptags }}</div>
+				{% endif %}
+				{% if node.field_listing_phone.value %}
+					<div class="phone"><i class="icon fas fa-phone-alt"></i>{{ node.field_listing_phone.value }}</div>
+				{% endif %}
+			</div>	
+		</div>
+		<div class="content-footer">
+			<div class="content-inner">
+				<div class="left listing-category">{{ content.field_listing_category }}</div>
+				<div class="right listing-location"><i class="icon fas fa-map-marker-alt"></i>{{ content.field_listing_location }}</div>
+			</div>
+		</div>
+	</div>  
+	
+	<div class="listing-data hidden">
+		<span class="data-lat">{{node.field_listing_map.lat}}</span>
+		<span class="data-lon">{{node.field_listing_map.lon}}</span>
+		<span class="data-html">
+			<span class="gva-map-content-popup">
+				<span class="image">
+					<a href="{{ url }}" rel="bookmark">
+						<img src="{{ node.field_listing_image.entity.uri.value | image_style('small') }}" alt="{{ node.field_listing_image.alt }}"/>
+					</a>
+				</span>
+				<span class="content-inner">
+					<span class="title"><a href="{{ url }}" rel="bookmark">{{ node.title.value }}</a></span>
+					{% if node.field_listing_address.value %}
+						<span class="address"><i class="icon la la-map"></i>{{ conAddress|striptags }}</span>
+					{% endif %}
+					{% if node.field_listing_phone.value %}
+						<span class="phone"><i class="icon la la-phone"></i>{{ node.field_listing_phone.value }}</span>
+					{% endif %}
+				</span>  
+			</span>
+		</span>
+	</div>
+</div>
+
