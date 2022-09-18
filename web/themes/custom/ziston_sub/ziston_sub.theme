@@ -2,5 +2,10 @@
 
 function ziston_sub_preprocess_html(&$variables) {
   $variables['#attached']['library'][] = 'ziston_sub/ziston_sub.skin.default';
+  // Add node id to the body class.
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if($node instanceof \Drupal\node\NodeInterface) {
+    $variables['attributes']['class'][] = 'node-' . $node->id();
+  }
 
 }
