@@ -4,6 +4,26 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   font-weight: 500;
 }
 
+h3 {
+  font-size: 30px;
+  font-weight: 500;
+  color: #41787d;
+}
+
+a {
+  color: #de4928;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+b, strong {
+  font-weight: 500;
+  color: #262626;
+  font-size: 105%;
+}
 /* Header */
 .header-default .header-main .header-content-inner .branding .site-branding-logo img {
   max-width: 100%;
@@ -109,7 +129,7 @@ div#block-twitterblock h2.block-title::before {
 }
 
 .frontpage .breadcrumb-content-inner .breadcrumb-content-main {
-  padding: 0 !important;
+  padding: 0 0 2rem!important;
   padding-top: 170px !important;
 }
 
@@ -196,4 +216,51 @@ div#block-twitterblock h2.block-title::before {
 .gsc-heading.style-1 .title {
   font-weight: 500;
   color: #41787d !important;
+}
+
+.gsc-heading .sub-title {
+  font-size: 18px;
+  text-transform: none;
+  font-weight: 500;
+  line-height: 1.3;
+  margin: 0 0 30px;
+}
+
+#remove-pt .bb-inner.remove_margin {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+.node-134 hr {
+  margin: 2rem 0;
+}
+
+.node-134 p {
+  line-height: 1.2;
+}
+
+.node-134 h6 {
+  font-size: 18px;
+  font-weight: 500;
+  color: #41787d !important;
+}
+
+.navigation .gva_menu .sub-menu > li > a {
+  line-height: 1.2;
+}
+
+.gva-navigation {
+  margin: 0 50px 0;
+}
+
+.sidebar img {
+  margin: 0 0 3rem;
+}
+
+.path-taxonomy ul[data-drupal-views-infinite-scroll-pager].pager {
+  margin: 0 0 30px 30px;
+}
+
+.path-taxonomy .page-title {
+  margin: 50px 0 0 0;
 }
