@@ -20,9 +20,9 @@ a:hover {
 }
 
 b, strong {
-  font-weight: 500;
-  color: #262626;
-  font-size: 105%;
+  font-weight: 700;
+  color: #797f89;
+  font-size: 96%;
 }
 /* Header */
 .header-default .header-main .header-content-inner .branding .site-branding-logo img {
@@ -146,15 +146,26 @@ div#block-gaviascontentbuilderfrontlogos img {
   background: #fff;
 }
 
-.footer-center {
-  display: none;
+#footer .footer-center {
+  padding: 30px 0;
 }
 
 #footer .copyright {
-  background: #5b5d59;
-  border-top: 1px solid rgb(91 93 89);
+  background: #de4928;
+  border-top: 1px solid #de4928;
   color: white;
   padding: 20px 0;
+}
+
+#footer {
+  color: white;
+  background: #4a4a4a;
+}
+
+.contact-info .contact-phone-box .content-inner .content-right .desc {
+  font-size: 16px;
+  color: #fff;
+  font-weight: 400;
 }
 
 .node-135 .gbb-row .bb-inner {
@@ -270,10 +281,20 @@ div#block-gaviascontentbuilderfrontlogos img {
   margin: 100px 0 0 0;
 }
 
-.frontpage  .bb-container.container-fw {
+#block-gaviascontentbuilderfrontlogos .bb-container.container-fw {
   border-top: 1px solid #ebebeb;
   border-bottom: 1px solid #ebebeb;
   padding: 30px 0;
+}
+
+#block-gaviascontentbuilderfrontlogos .gbb-row .bb-inner {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.gbb-row .bb-inner {
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
 
 /* Floating Bubbles */
@@ -357,9 +378,49 @@ div#block-gaviascontentbuilderfrontlogos img {
   height: 100vmin;
 }
 
-.content-main {
-  height: 100vmin;
-  width: 100%;
-  float: left;
-  margin: 0 auto;
+.contact-info .logo-footer {
+  margin-bottom: 25px;
+  max-width: 70% !important;
+}
+
+#footer p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: white;
+}
+#footer .gva-navigation {
+  margin: 0;
+}
+
+#footer .gva-navigation a {
+  color: white;
+}
+
+#footer .navigation .gva_menu > li > a {
+  color: white !important;
+  padding: 0 10px 0 0;
+}
+
+#footer .navigation .gva_menu > li {
+  display: flex;
+}
+
+#footer  li.menu-item {
+  margin: 0 0 0.5rem;
+}
+
+.contact-info .contact-phone-box .content-inner .content-right .title {
+  color: white;
+}
+
+div#block-gabevmap h2.block-title::before {
+  font-family: 'FontAwesome';
+  color: #DE4928;
+  content: '\f279';
+  margin: 0 .5rem 0 0;
+}
+
+.node-112 .gbb-row .bb-inner {
+  padding-top: 0;
+  padding-bottom: 40px;
 }
