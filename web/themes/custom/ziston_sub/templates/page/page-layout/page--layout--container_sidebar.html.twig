@@ -4,97 +4,26 @@
  * Gavias's theme implementation to display a single Drupal page.
  */
 #}
-<style>
-	@-webkit-keyframes fade-in {
-		0%{
-			opacity: 0;
-			top: 50px;
-		}
-		50% {
-			opacity: 1;
-		}
-		100% {
-			opacity: 0;
-			top: -50px;
-		}
-	}
-
-	.text-animated-one {
-		display: inline;
-		position: relative;
-		top: -50px;
-		-webkit-animation: fade-in 5s;
-		-webkit-animation-delay: 5s;
-		animation-duration: 5s;
-		animation-iteration-count: 1;
-		margin: 0 auto;
-		float: left;
-		text-align: center;
-		width: 100%;
-	}
-
-	.text-animated-two {
-		opacity: 0;
-		display: inline;
-		position: relative;
-		margin-left: -25%;
-		-webkit-animation: fade-in 5s;
-		-webkit-animation-delay: 10s;
-		animation-duration: 5s;
-		animation-iteration-count: 1;
-		float: left;
-		text-align: center;
-		width: 100%;
-	}
-
-	.text-animated-three {
-		opacity: 0;
-		display: inline;
-		position: relative;
-		margin-left: 35%;
-		-webkit-animation: fade-in 5s infinite;
-		-webkit-animation-delay: 15s;
-		animation-duration: 5s;
-		animation-iteration-count: 1;
-		float: left;
-		text-align: center;
-		width: 100%;
-	}
-
-	.text-animated-four {
-		opacity: 0;
-		display: inline;
-		position: relative;
-		margin-left: -35%;
-		-webkit-animation: fade-in 5s infinite;
-		-webkit-animation-delay: 20s;
-		animation-duration: 5s;
-		animation-iteration-count: 1;
-		float: left;
-		text-align: center;
-		width: 100%;
-	}
-</style>
 {% set has_breadcrumb = '' %}
 <div class="gva-body-wrapper">
 	<div class="body-page gva-body-page">
 	   {% include header_skin %}
-		
-		{% if page.breadcrumbs %}
-			{% set has_breadcrumb = ' has-breadcrumb' %}
+
+	   {% if page.breadcrumbs %}
+	   	{% set has_breadcrumb = ' has-breadcrumb' %}
 			<div class="breadcrumbs">
 				{{ page.breadcrumbs }}
 			</div>
 		{% endif %}
 
 		<div role="main" class="main main-page{{ has_breadcrumb }}">
-		
+
 			<div class="clearfix"></div>
 			{% if page.slideshow_content %}
 				<div class="slideshow_content area">
 					{{ page.slideshow_content }}
 				</div>
-			{% endif %}	
+			{% endif %}
 
 			{% if page.help %}
 				<div class="help gav-help-region">
@@ -105,7 +34,7 @@
 					</div>
 				</div>
 			{% endif %}
-			
+
 			<div class="clearfix"></div>
 			{% if page.before_content %}
 				<div class="before_content area">
@@ -113,17 +42,17 @@
 						<div class="row">
 							<div class="col-xs-12">
 								{{ page.before_content }}
-							</div>
+								</div>
 						</div>
 					</div>
 				</div>
 			{% endif %}
-			
+
 			<div class="clearfix"></div>
-			
+
 			<div id="content" class="content content-full">
-				<div class="container-full container-bg">
-					{% include '@ziston/page/main-no-sidebar.html.twig' %}
+				<div class="container container-bg">
+					{% include '@ziston/page/main.html.twig' %}
 				</div>
 			</div>
 
@@ -144,7 +73,7 @@
 	        		</div>
 				</div>
 			{% endif %}
-			
+
 		</div>
 	</div>
 

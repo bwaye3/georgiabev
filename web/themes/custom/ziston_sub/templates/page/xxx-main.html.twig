@@ -14,6 +14,94 @@
 		{% set cl_main = 'col-xxl-8 col-xl-8 col-lg-8 col-md-12 col-sm-12 col-xs-12 order-xl-2 order-lg-2 order-md-1 order-sm-1 order-xs-1 sb-l ' %}
 	{% endif %}
 {% endif %}
+<style>
+	@-webkit-keyframes fade-in {
+		0%{
+			opacity: 0;
+			top:1200px;
+		}
+		50% {
+			opacity: 1;
+		}
+		100% {
+			opacity: 0;
+			top: -150px;
+		}
+	}
+
+	.bubble-animated-one {
+		display: inline;
+		position: absolute;
+		-webkit-animation: fade-in 2s infinite;
+		-webkit-animation-delay: 2s;
+		animation-duration: 8s;
+		animation-iteration-count: 1;
+		margin: 0 auto;
+		float: left;
+		text-align: center;
+		width: 100%;
+		bottom: -30px;
+	}
+
+	.bubble-animated-two {
+		opacity: 0;
+		display: inline;
+		position: absolute;
+		margin-left: -25%;
+		-webkit-animation: fade-in 2s infinite;
+		-webkit-animation-delay: 7s;
+		animation-duration: 10s;
+		animation-iteration-count: 1;
+		float: left;
+		text-align: center;
+		width: 100%;
+		bottom: 0;
+	}
+
+	.bubble-animated-three {
+		opacity: 0;
+		display: inline;
+		position: absolute;
+		margin-left: 35%;
+		-webkit-animation: fade-in 5s infinite;
+		-webkit-animation-delay: 12s;
+		animation-duration: 10s;
+		animation-iteration-count: 1;
+		float: left;
+		text-align: center;
+		width: 100%;
+		bottom: 0;
+	}
+
+	.bubble-animated-four {
+		opacity: 0;
+		display: inline;
+		position: absolute;
+		margin-left: -35%;
+		-webkit-animation: fade-in 5s infinite;
+		-webkit-animation-delay: 15s;
+		animation-duration: 10s;
+		animation-iteration-count: 1;
+		float: left;
+		text-align: center;
+		width: 100%;
+		bottom: 0;
+	}
+
+	.aggettivi {
+		display: inline;
+		text-align: center;
+		margin: 0 auto;
+		height: 100vmin;
+	}
+
+	.content-main {
+		height: 100vmin;
+		width: 100%;
+		float: left;
+		margin: 0 auto;
+	}
+</style>
 
 <div class="region-main-page-content {{ cl_main_content }}">
 	<div class="row">
@@ -23,7 +111,20 @@
 				{% if page.content %}
 					<div class="content-main">
 						{{ page.content }}
-						{% include '@ziston_sub/page/bubbles.html.twig' %}
+						<div class="aggettivi">
+							<div class="bubble-animated-one">
+								<img src="/themes/custom/ziston_sub/images/bubble_1.png" height="20px" width="20px">
+							</div>
+							<div class="bubble-animated-two">
+								<img src="/themes/custom/ziston_sub/images/bubble_2.png" height="20px" width="20px">
+							</div>
+							<div class="bubble-animated-three">
+								<img src="/themes/custom/ziston_sub/images/bubble_3.png" height="20px" width="20px">
+							</div>
+							<div class="bubble-animated-four">
+								<img src="/themes/custom/ziston_sub/images/bubble_3.png" height="20px" width="20px">
+							</div>
+						</div>
 					</div>
 				{% endif %}
 			</div>

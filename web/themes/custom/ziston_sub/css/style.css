@@ -121,7 +121,7 @@ div#block-twitterblock h2.block-title::before {
 }
 
 .frontpage .breadcrumb-content-inner .gva-block-breadcrumb.text-light .page-title {
-  top: 95px;
+  top: 110px;
   position: absolute;
   margin: 0 auto;
   text-align: center;
@@ -137,7 +137,7 @@ div#block-twitterblock h2.block-title::before {
   margin-bottom: -100px;
 }
 
-.frontpage #block-frontlogos img {
+div#block-gaviascontentbuilderfrontlogos img {
   max-height: 90px;
   padding: .5rem;
 }
@@ -213,6 +213,7 @@ div#block-twitterblock h2.block-title::before {
 .gva-user-region.show .user-content a {
   color: #de4928;
 }
+
 .gsc-heading.style-1 .title {
   font-weight: 500;
   color: #41787d !important;
@@ -270,7 +271,95 @@ div#block-twitterblock h2.block-title::before {
 }
 
 .frontpage  .bb-container.container-fw {
-  border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #ebebeb;
+  border-bottom: 1px solid #ebebeb;
   padding: 30px 0;
+}
+
+/* Floating Bubbles */
+@-webkit-keyframes fade-in {
+  0%{
+    opacity: 0;
+    top:1200px;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    top: -150px;
+  }
+}
+
+.bubble-animated-one {
+  display: inline;
+  position: absolute;
+  -webkit-animation: fade-in 2s infinite;
+  -webkit-animation-delay: 2s;
+  animation-duration: 8s;
+  animation-iteration-count: 1;
+  margin: 0 auto;
+  float: left;
+  text-align: center;
+  width: 100%;
+  bottom: -30px;
+}
+
+.bubble-animated-two {
+  opacity: 0;
+  display: inline;
+  position: absolute;
+  margin-left: -25%;
+  -webkit-animation: fade-in 2s infinite;
+  -webkit-animation-delay: 7s;
+  animation-duration: 10s;
+  animation-iteration-count: 1;
+  float: left;
+  text-align: center;
+  width: 100%;
+  bottom: 0;
+}
+
+.bubble-animated-three {
+  opacity: 0;
+  display: inline;
+  position: absolute;
+  margin-left: 35%;
+  -webkit-animation: fade-in 5s infinite;
+  -webkit-animation-delay: 12s;
+  animation-duration: 10s;
+  animation-iteration-count: 1;
+  float: left;
+  text-align: center;
+  width: 100%;
+  bottom: 0;
+}
+
+.bubble-animated-four {
+  opacity: 0;
+  display: inline;
+  position: absolute;
+  margin-left: -35%;
+  -webkit-animation: fade-in 5s infinite;
+  -webkit-animation-delay: 15s;
+  animation-duration: 10s;
+  animation-iteration-count: 1;
+  float: left;
+  text-align: center;
+  width: 100%;
+  bottom: 0;
+}
+
+.bubble-wrapper {
+  display: inline;
+  text-align: center;
+  margin: 0 auto;
+  height: 100vmin;
+}
+
+.content-main {
+  height: 100vmin;
+  width: 100%;
+  float: left;
+  margin: 0 auto;
 }
