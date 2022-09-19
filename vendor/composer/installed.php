@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '1b3801ce47e940bf162a0d0ad12acbe4f52d9a4d',
+        'reference' => '14b307ac559200d5fafe2b913597d176086a6033',
         'name' => 'drupal/legacy-project',
         'dev' => true,
     ),
@@ -580,7 +580,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '1b3801ce47e940bf162a0d0ad12acbe4f52d9a4d',
+            'reference' => '14b307ac559200d5fafe2b913597d176086a6033',
             'dev_requirement' => false,
         ),
         'drupal/mailchimp' => array(
@@ -653,15 +653,6 @@
             'install_path' => __DIR__ . '/../../web/modules/contrib/views_infinite_scroll',
             'aliases' => array(),
             'reference' => '2.0.0',
-            'dev_requirement' => false,
-        ),
-        'drupal/webform' => array(
-            'pretty_version' => '6.1.3',
-            'version' => '6.1.3.0',
-            'type' => 'drupal-module',
-            'install_path' => __DIR__ . '/../../web/modules/contrib/webform',
-            'aliases' => array(),
-            'reference' => '6.1.3',
             'dev_requirement' => false,
         ),
         'drush/drush' => array(

@@ -264,3 +264,13 @@ div#block-twitterblock h2.block-title::before {
 .path-taxonomy .page-title {
   margin: 50px 0 0 0;
 }
+
+.frontpage div#content {
+  margin: 100px 0 0 0;
+}
+
+.frontpage  .bb-container.container-fw {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 30px 0;
+}
