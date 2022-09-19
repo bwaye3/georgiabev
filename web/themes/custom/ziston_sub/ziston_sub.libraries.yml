@@ -6,4 +6,3 @@ ziston_sub.skin.default:
          css/style.css: {}
    js:
       js/main.js: {}
-      js/gabev.js: {}
