@@ -567,3 +567,13 @@ div#block-addthis {
 body .copyright-inner {
   font-size: .8rem !important;
 }
+
+.control-search-2 {
+  background: #de4928;
+  border-radius: 20px;
+  padding: 0 15px;
+}
+
+.control-search-2 a {
+  color: white !important;
+}

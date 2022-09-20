@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '14b307ac559200d5fafe2b913597d176086a6033',
+        'reference' => 'abc7d70e5b3004c06c50b5719c2cf6b09724bb0d',
         'name' => 'drupal/legacy-project',
         'dev' => true,
     ),
@@ -242,6 +242,15 @@
             'install_path' => __DIR__ . '/../../web/modules/contrib/better_exposed_filters',
             'aliases' => array(),
             'reference' => '6.0.1',
+            'dev_requirement' => false,
+        ),
+        'drupal/change_author_action' => array(
+            'pretty_version' => '1.0.0',
+            'version' => '1.0.0.0',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../web/modules/contrib/change_author_action',
+            'aliases' => array(),
+            'reference' => '8.x-1.0',
             'dev_requirement' => false,
         ),
         'drupal/chosen' => array(
@@ -580,7 +589,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '14b307ac559200d5fafe2b913597d176086a6033',
+            'reference' => 'abc7d70e5b3004c06c50b5719c2cf6b09724bb0d',
             'dev_requirement' => false,
         ),
         'drupal/mailchimp' => array(

@@ -36,7 +36,8 @@
 
 	<div class="listing-content clearfix">  
 		<div class="listing-info">
-			<h3 class="title"><a href="{{ url }}" rel="bookmark">{{ label }}</a></h3>
+			{# <h3 class="title"><a href="{{ url }}" rel="bookmark">{{ label }}</a></h3>#}
+			<h3 class="title">{{ label }}</h3>
 			<div class="tagline">{{ node.field_listing_tagline.value }}</div>
 			<div class="listing-meta">
 				{% if node.field_listing_address.value %}
@@ -50,7 +51,7 @@
 		<div class="content-footer">
 			<div class="content-inner">
 				<div class="left listing-category">{{ content.field_listing_category }}</div>
-				<div class="right listing-location"><i class="icon fas fa-map-marker-alt"></i>{{ content.field_listing_location }}</div>
+				{#  #}
 			</div>
 		</div>
 	</div>  

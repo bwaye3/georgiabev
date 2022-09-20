@@ -1,0 +1,13 @@
+name: Change author action
+type: module
+description: 'Adds an extra action to nodes to allow changing the author in bulk.'
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: User interface
+dependencies:
+  - drupal:action
+
+# Information added by Drupal.org packaging script on 2021-02-06
+version: '8.x-1.0'
+project: 'change_author_action'
+datestamp: 1612629679
