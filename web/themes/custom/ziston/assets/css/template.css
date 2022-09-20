@@ -5699,6 +5699,7 @@ body.logged-in.toolbar-horizontal .gva-quick-side {
   max-width: 130px;
 }
 
+/*
 .header-default .header-main .header-content-inner .header-inner {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -5713,6 +5714,8 @@ body.logged-in.toolbar-horizontal .gva-quick-side {
   -ms-flex-pack: end;
   justify-content: end;
 }
+
+*/
 
 .header-default .header-main .header-content-inner .header-inner .main-menu.has-header-button {
   padding-right: 180px;

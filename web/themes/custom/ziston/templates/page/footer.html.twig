@@ -1,77 +1,88 @@
 <footer id="footer" class="footer">
-  	<div class="footer-inner">
-	 
-	 	{% if page.before_footer %}
-		  	<div class="footer-top">
-			  	<div class="container">
-				 	<div class="row">
-						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-						  <div class="before-footer clearfix area">
-								{{ page.before_footer }}
-						  </div>
-						</div>
-				 	</div>     
-			  	</div>   
-			</div> 
-	  {% endif %}
-	  
-	  <div class="footer-center">
-		  <div class="container">      
-			  <div class="row">
-				  {% if page.footer_first %}
-					 <div class="footer-first col-xl-{{ footer_first_size }} col-lg-{{ footer_first_size }} col-md-12 col-sm-12 col-xs-12 footer-column">
-						{{ page.footer_first }}
-					 </div> 
-				  {% endif %}
+    <div class="footer-inner">
 
-				  {% if page.footer_second %}
-					<div class="footer-second col-xl-{{ footer_second_size }} col-lg-{{ footer_second_size }} col-md-12 col-sm-12 col-xs-12 footer-column">
-						{{ page.footer_second }}
-					 </div> 
-				  {% endif %}
+        {% if page.before_footer %}
+            <div class="footer-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="before-footer clearfix area">
+                                {{ page.before_footer }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
 
-				  {% if page.footer_third %}
-					 <div class="footer-third col-xl-{{ footer_third_size }} col-lg-{{ footer_third_size }} col-md-12 col-sm-12 col-xs-12 footer-column">
-						{{ page.footer_third }}
-					 </div> 
-				  {% endif %}
+        <div class="footer-center">
+            <div class="container">
+                <div class="row">
+                    {% if page.footer_first %}
+                        <div class="footer-first col-xl-{{ footer_first_size }} col-lg-{{ footer_first_size }} col-md-12 col-sm-12 col-xs-12 footer-column">
+                            {{ page.footer_first }}
+                        </div>
+                    {% endif %}
 
-				  {% if page.footer_four %}
-					  <div class="footer-four col-xl-{{ footer_four_size }} col-lg-{{ footer_four_size }} col-md-12 col-sm-12 col-xs-12 footer-column">
-						{{ page.footer_four }}
-					 </div> 
-				  {% endif %}
-			  </div>   
-		  </div>
-	 </div>  
+                    {% if page.footer_second %}
+                        <div class="footer-second col-xl-{{ footer_second_size }} col-lg-{{ footer_second_size }} col-md-12 col-sm-12 col-xs-12 footer-column">
+                            {{ page.footer_second }}
+                        </div>
+                    {% endif %}
 
-	 {% if page.after_footer %}
-	  <div class="footer-bottom">
-		  <div class="container">
-			 <div class="row">
-				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-				  <div class="after-footer clearfix area">
-						{{ page.after_footer }}
-				  </div>
-				</div>
-			 </div>     
-		  </div>   
-		</div> 
-	 {% endif %}
+                    {% if page.footer_third %}
+                        <div class="footer-third col-xl-{{ footer_third_size }} col-lg-{{ footer_third_size }} col-md-12 col-sm-12 col-xs-12 footer-column">
+                            {{ page.footer_third }}
+                        </div>
+                    {% endif %}
 
-  </div>   
+                    {% if page.footer_four %}
+                        <div class="footer-four col-xl-{{ footer_four_size }} col-lg-{{ footer_four_size }} col-md-12 col-sm-12 col-xs-12 footer-column">
+                            {{ page.footer_four }}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
 
-  {% if page.copyright %}
-	 <div class="copyright">
-		<div class="container">
-		  <div class="copyright-inner">
-			  <div class="row">
-				  <div class="col-sm-12">
-					  © {{ 'now' | date('Y') }} Georgia Beverage Association
-				  </div></div>
-		  </div>   
-		</div>   
-	 </div>
-  {% endif %}
+        {% if page.after_footer %}
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="after-footer clearfix area">
+                                {{ page.after_footer }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+
+    </div>
+
+    {% if page.copyright %}
+        <div class="copyright">
+            <div class="container">
+                <div class="copyright-inner">
+                    <div class="row">
+                        <div class="col-sm-12">
+							<span>{{ '©'|t }}</span>
+							<span>{{ 'now' | date('Y') }}</span>
+							<span class="ml-2">{{ 'Georgia Beverage Association'|t }}</span>
+                            <span class="mx-3">{{ '|'|t }}</span>
+                            <span class="ml-1">
+								<a href="/privacy-policy" aria-label="Privacy Policy">{{ 'Privacy Policy'|t }}</a>
+							</span>
+                            <span class="mx-3">{{ '|'|t }}</span>
+                            <span class="ml-1">
+								<a href="/terms-and-conditions" aria-label="Terms and conditions">{{ 'Terms and Conditions'|t }}</a>
+							</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
 
 </footer>
