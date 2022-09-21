@@ -50,40 +50,6 @@ function ziston_form_system_theme_settings_alter(&$form, &$form_state) {
 		),
 	);
 
-	/* ---------- Setting Logo -------------- */
-	$form['custom_logo'] = array(
-		'#type' => 'details',
-		'#attributes' => array(),
-		'#title' => t('Logo options'),
-		'#weight' => -999,
-		'#group' => 'options',
-		'#open' => FALSE,
-	);
-
-	$form['custom_logo']['logo_width'] = array(
-		'#type' => 'textfield',
-		'#title' => t('Width logo'),
-		'#default_value' => theme_get_setting('logo_width') ? theme_get_setting('logo_width'): '160px',
-		'#group' => 'custom_logo',
-		'#description' => 'Set width of logo, example: 150px'
-	); 
-
-	$form['custom_logo']['logo_padding_top'] = array(
-		'#type' => 'textfield',
-		'#title' => t('Padding top logo'),
-		'#default_value' => theme_get_setting('logo_padding_top'),
-		'#group' => 'custom_logo',
-		'#description' => 'Set space top of logo, example: 15px'
-	); 
-
-	$form['custom_logo']['logo_padding_bottom'] = array(
-		'#type' => 'textfield',
-		'#title' => t('Padding bottom logo'),
-		'#default_value' => theme_get_setting('logo_padding_bottom'),
-		'#group' => 'custom_logo',
-		'#description' => 'Set space bottom of logo, example: 15px'
-	); 
-
 	/* --------- Setting general ----------------*/
 	$form['general'] = array(
 		'#type' => 'details',
@@ -119,17 +85,6 @@ function ziston_form_system_theme_settings_alter(&$form, &$form_state) {
 		'#options' => array(
 			'wide' => t('Wide (default)'),
 			'boxed' => t('Boxed'),
-		),
-	);
-
-	$form['general']['preloader'] = array(
-		'#type' => 'select',
-		'#title' => t('Preloader'),
-		'#default_value' => theme_get_setting('preloader'),
-		'#group' => 'options',
-		'#options' => array(
-			'0' => t('Disable'),
-			'1' => t('Enable')
 		),
 	);
 
@@ -205,34 +160,6 @@ function ziston_form_system_theme_settings_alter(&$form, &$form_state) {
 		'#options' => array(0 => t('Hidden'), 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 , 11, 12),
 		'#description' => 'Setting width for grid boostrap / 12'
 	);
-
-	// User CSS --------------------------------------
-	$form['options']['css_customize'] = array(
-		'#type' => 'details',
-		'#attributes' => array(),
-		'#title' => t('Customize'),
-		'#weight' => -996,
-		'#group' => 'options',
-		'#open' => TRUE,
-	);
-	$form['options']['css_customize']['enable_customize'] = array(
-		'#type' => 'select',
-		'#title' => t('Enable Display Cpanel Customize'),
-		'#default_value' => theme_get_setting('enable_customize'),
-		'#group' => 'settings',
-		'#options' => array(
-			'0'        => t('Disable'),
-			'1'        => t('Enable'),
-		),
-	);
-	$form['customize']['customize_css'] = array(
-		'#type' => 'textarea',
-		'#title' => t('Add your own CSS'),
-		'#group' => 'css_customize',
-		'#attributes' => array('class' => array('code_css') ),
-		'#default_value' => theme_get_setting('customize_css'),
-	);
-		
 
 	//Setting Map ----------------------------------
 	$form['options']['settings_map'] = array(
