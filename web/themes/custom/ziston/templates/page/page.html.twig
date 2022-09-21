@@ -73,6 +73,13 @@
 	        		</div>
 				</div>
 			{% endif %}
+
+			{% if page.after_content_fullwidth %}
+				<div id="ga-banner" class="jumbotron-fluid full-width-before-content" role="complementary">
+							{{ page.after_content_fullwidth }}
+					</div>
+				</div>
+			{% endif %}
 			
 		</div>
 	</div>

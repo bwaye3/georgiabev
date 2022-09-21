@@ -44,7 +44,6 @@
                 </div>
             </div>
         </div>
-
         {% if page.after_footer %}
             <div class="footer-bottom">
                 <div class="container">
@@ -58,29 +57,40 @@
                 </div>
             </div>
         {% endif %}
-
     </div>
+    <div class="copyright">
+        <div class="container">
+            <div class="copyright-inner">
+                <div class="row">
+                    <div class="col-sm-12">
 
-        <div class="copyright">
-            <div class="container">
-                <div class="copyright-inner">
-                    <div class="row">
-                        <div class="col-sm-12">
-							<span>{{ '©'|t }}</span>
-							<span>{{ 'now' | date('Y') }}</span>
-							<span class="ml-2">{{ 'Georgia Beverage Association'|t }}</span>
+                       <span class="site-branding-logo-footer">
+                            <a href="/" title="Home" class="spin-cap" rel="home">
+                                <img src="../{{ base_path ~ directory }}/images/ga-state-trans-footer.png"
+                                     alt="{{ 'georgia beverage state'|t }}" height="auto"
+                                     width="35px">
+                            </a>
+                        </span>
+
+                        <span class="site-branding-logo-footer-links">
+                            <span>{{ '©'|t }}</span>
+                            <span>{{ 'now' | date('Y') }}</span>
+                            <span class="ml-2">{{ 'Georgia Beverage Association'|t }}</span>
                             <span class="mx-3">{{ '|'|t }}</span>
-                            <span class="ml-1">
-								<a href="/privacy-policy" aria-label="Privacy Policy">{{ 'Privacy Policy'|t }}</a>
-							</span>
+                            <span class="footer-link ml-1">
+                                    <a href="/privacy-policy" aria-label="Privacy Policy">{{ 'Privacy Policy'|t }}</a>
+                                </span>
                             <span class="mx-3">{{ '|'|t }}</span>
-                            <span class="ml-1">
-								<a href="/terms-and-conditions" aria-label="Terms and conditions">{{ 'Terms and Conditions'|t }}</a>
-							</span>
-                        </div>
+                            <span class="footer-link ml-1">
+                                    <a href="/terms-and-conditions"
+                                       aria-label="Terms and conditions">{{ 'Terms and Conditions'|t }}</a>
+                            </span>
+                        </span>
                     </div>
+
                 </div>
             </div>
         </div>
+    </div>
 
 </footer>

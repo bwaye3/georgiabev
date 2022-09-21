@@ -1,11 +1,11 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => 'dev-main',
-        'version' => 'dev-main',
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'abc7d70e5b3004c06c50b5719c2cf6b09724bb0d',
+        'reference' => '1224a537f067d9e4913e71ae7a7d1cad5222fe0f',
         'name' => 'drupal/legacy-project',
         'dev' => true,
     ),
@@ -233,6 +233,15 @@
             'install_path' => __DIR__ . '/../../web/modules/contrib/admin_toolbar',
             'aliases' => array(),
             'reference' => '3.1.1',
+            'dev_requirement' => false,
+        ),
+        'drupal/back_to_top' => array(
+            'pretty_version' => '2.0.0',
+            'version' => '2.0.0.0',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../web/modules/contrib/back_to_top',
+            'aliases' => array(),
+            'reference' => '2.0.0',
             'dev_requirement' => false,
         ),
         'drupal/better_exposed_filters' => array(
@@ -565,6 +574,15 @@
             'reference' => '8.x-1.3',
             'dev_requirement' => false,
         ),
+        'drupal/jquery_ui_effects' => array(
+            'pretty_version' => '1.2.0',
+            'version' => '1.2.0.0',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../web/modules/contrib/jquery_ui_effects',
+            'aliases' => array(),
+            'reference' => '8.x-1.2',
+            'dev_requirement' => false,
+        ),
         'drupal/jquery_ui_slider' => array(
             'pretty_version' => '1.1.0',
             'version' => '1.1.0.0',
@@ -584,12 +602,12 @@
             'dev_requirement' => false,
         ),
         'drupal/legacy-project' => array(
-            'pretty_version' => 'dev-main',
-            'version' => 'dev-main',
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'abc7d70e5b3004c06c50b5719c2cf6b09724bb0d',
+            'reference' => '1224a537f067d9e4913e71ae7a7d1cad5222fe0f',
             'dev_requirement' => false,
         ),
         'drupal/mailchimp' => array(
