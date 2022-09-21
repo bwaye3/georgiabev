@@ -444,12 +444,13 @@ div#block-addthis {
 
 .bubble-animated-three {
   -webkit-animation-delay: 14s;
-  left: 35%;
+  left: 40%;
 }
 
 .bubble-animated-four {
   -webkit-animation-delay: 20s;
-  left: 65%;
+  width: 25px;
+  left: 70%;
 }
 
 .bubble-animated-five {
@@ -559,6 +560,11 @@ body .copyright-inner {
 
 .control-search-2 a {
   color: white !important;
+}
+
+.node-134 .column-content.card {
+  min-height: 150px;
+  margin: 0 0 25px;
 }
 
 @media (max-width: 768px) {
