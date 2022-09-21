@@ -1,6 +1,6 @@
 name: Ziston subtheme
 type: theme
-description: 'A flexible, recolorable theme with many regions and a responsive, mobile-first layout.'
+description: 'Georgia Bev subtheme'
 package: gaviasthemes
 base theme: ziston
 libraries:

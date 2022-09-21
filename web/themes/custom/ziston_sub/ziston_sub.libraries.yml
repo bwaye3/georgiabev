@@ -4,5 +4,3 @@ ziston_sub.skin.default:
    css:
       theme:
          css/style.css: {}
-   js:
-      js/main.js: {}
