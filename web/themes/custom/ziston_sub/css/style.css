@@ -577,3 +577,98 @@ body .copyright-inner {
 .control-search-2 a {
   color: white !important;
 }
+
+@media (max-width: 768px) {
+  .header-default .header-main .header-content-inner .branding .site-branding-logo img {
+    max-width: 60%;
+  }
+
+  .menu-bar {
+    top: 44%;
+    right: 10px;
+  }
+
+  .topbar .topbar-wrapper {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .gva-offcanvas-mobile .gva-navigation .gva_menu li a .icaret {
+    right: -40px;
+  }
+
+  #block-gaviascontentbuilderfrontlogos .gsc-column.col-xxl-2.col-xl-2.col-lg-2.col-md-2.col-sm-4.col-xs-12 {
+    max-width: 49.5% !important;
+  }
+
+  .map-layout-wrapper .btn-theme-small {
+    font-size: 10px;
+    padding: 0 5px;
+    line-height: 2;
+  }
+
+  .breadcrumb-content-main {
+    padding: -60px 50px 50px 50px !important;
+  }
+
+  .breadcrumb-style {
+    margin-top: -67px !important;
+  }
+
+  .gsc-heading.style-1 .title {
+    font-size: 20px !important;
+  }
+
+  .node-129 .widget.gsc-heading.align-center.style-1 .px-5 {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  .gsc-heading .sub-title {
+    font-size: 14px !important;
+  }
+
+  .breadcrumb-content-inner .gva-block-breadcrumb .page-title {
+    font-size: 33px;
+  }
+
+  h2.page-title::after {
+    display: none;
+  }
+
+  .breadcrumb.text-light .page-title {
+    font-size: 29px;
+  }
+
+  .topbar .topbar-wrapper .topbar-content {
+    padding: 0 10px;
+  }
+
+  .frontpage .breadcrumb-content-inner .gva-block-breadcrumb.text-light .page-title {
+    font-size: 27px !important;
+  }
+
+  .topbar .topbar-wrapper .topbar-content .topbar-right {
+    flex: none;
+  }
+
+  .topbar .topbar-wrapper .topbar-content .topbar-left {
+    display: list-item;
+  }
+
+  .breadcrumb-content-inner .breadcrumb-content-main {
+    padding: 162px 15px 1px;
+  }
+
+  h3 {
+    font-size: 23px;
+  }
+
+  .topbar .topbar-wrapper .topbar-content .topbar-right > .content-inner .search-region {
+    margin-right: 22px;
+  }
+
+  .gva-offcanvas-mobile .gva-navigation .gva_menu > li ul.menu.sub-menu li a {
+    line-height: 1.4;
+  }
+}
