@@ -163,25 +163,6 @@ function ziston_form_system_theme_settings_alter(&$form, &$form_state) {
 			'header-3' => t('Header v3')
 		),
 	);
-	$form['header']['hide_header_button_link'] = array(
-    	'#type' => 'select',
-    	'#title' => t('Hide Header Button Link'),
-    	'#default_value' => theme_get_setting('hide_header_button_link') ? theme_get_setting('hide_header_button_link') : '/node/add/listing',
-    	'#options' => array(
-	      'show' => t('Show'),
-	      'hide' => t('Hide'),
-    	),
-  	);
-  	$form['header']['header_button_link'] = array(
-    	'#type' => 'textfield',
-    	'#title' => t('Header Button Link'),
-    	'#default_value' => theme_get_setting('header_button_link'),
-  	);
-  	$form['header']['header_button_text'] = array(
-    	'#type' => 'textfield',
-    	'#title' => t('Header Button Text'),
-    	'#default_value' => theme_get_setting('header_button_text') ? theme_get_setting('header_button_text') : '+ Add Listing',
-  	);
 
 	/*--------- Setting Footer ------------ */
 	$form['footer'] = array(

@@ -1,6 +1,6 @@
-name: Ziston subtheme
+name: Georgia Beverage
 type: theme
-description: 'Georgia Bev subtheme'
+description: 'GeorgiaBev subtheme'
 package: gaviasthemes
 base theme: ziston
 libraries:
