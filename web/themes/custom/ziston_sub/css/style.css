@@ -169,8 +169,8 @@ div#block-gaviascontentbuilderfrontlogos img {
 }
 
 #block-gaviascontentbuilderfrontlogos .bb-container.container-fw {
-  border-top: 1px solid #ebebeb;
-  border-bottom: 1px solid #ffffff;
+  border-top: 4px solid #de4928;
+  border-bottom: 4px solid #de4928;
   padding: 30px 0;
 }
 
@@ -210,7 +210,46 @@ div#block-addthis {
   content: '\f064';
   margin: 0 .5rem 0 0;
 }
-/**/
+
+#member-block p {
+  font-size: .85rem;
+  line-height: 1.2;
+}
+
+#member-block h5 {
+  margin-top: 0 !important;
+  margin-bottom: 5px !important;
+  line-height: 1.2;
+  font-size: 1rem;
+}
+
+#member-block .item-columns {
+  padding: 0 3.5rem !important;
+  margin: 0 0 1rem !important;
+}
+
+#member-block .hr {
+  border-bottom: 1px solid #ccc;
+}
+
+#ga-banner .block {
+  margin-bottom: 0 !important;
+}
+
+.sidebar .block .block-title {
+  margin-bottom: 2rem;
+  padding-bottom: 0;
+}
+.sidebar h2.block-title {
+  color: #52808e !important;
+  font-size: 20px !important;
+  font-weight: 600 !important;
+}
+
+.sidebar .listing-block.teaser_1 .listing-content .listing-info .title {
+  font-size: 18px !important;
+  margin: 0 0 4px !important;
+}
 
 /* Nodes */
 .node-135 .gbb-row .bb-inner {
@@ -360,6 +399,14 @@ div#block-addthis {
 .frontpage div#content {
   margin: 100px 0 0 0;
 }
+
+.georgiabev-title .gabev-icon a {
+  color: #5b5d59;
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 1.2;
+}
+
 /**/
 
 /* Footer */
@@ -427,7 +474,6 @@ div#block-addthis {
 #footer p {
   margin-top: 0;
   margin-bottom: 1rem;
-  color: #262626;
 }
 
 #footer .footer-top {
@@ -712,7 +758,8 @@ span.site-branding-logo-footer-links {
   padding: 0 0 0 30px !important;
 }
 
-.button:not(.register-button), .btn, .btn-white, .btn-theme, .btn-theme-second, .btn-black, .more-link a, .btn-theme-submit {
+.btn.btn-primary,
+.more-link a {
   font-size: 10px;
   background: #0a6fb4;
   color: #fff;
@@ -720,7 +767,39 @@ span.site-branding-logo-footer-links {
   padding: 10px 20px;
   line-height: 1.2;
   letter-spacing: 3px;
+  text-decoration: none;
 }
+
+.btn.btn-primary:hover,
+.more-link a:hover {
+  background: #de4928;
+}
+
+.js-pager__items {
+  display: inline-flex;
+}
+
+#member-block ul li {
+  list-style: none !important;
+}
+
+.more-link {
+  margin-top: .5rem;
+}
+
+div#block-twitterfeedblock h2.block-title::before {
+  font-family: 'FontAwesome';
+  color: #de4928;
+  content: '\f099';
+  margin: 0 .5rem 0 0;
+}
+
+.twitter-feed-wrapper h2 {
+  margin-bottom: 1rem !important;
+  border-bottom: 1px solid #e7e7e7;
+  padding: 0 0 .5rem;
+}
+
 /*******/
 /*******/
 /*******/
@@ -822,4 +901,13 @@ span.site-branding-logo-footer-links {
     display: inline-flex;
     width: 100%;
   }
+}
+
+.node-2 .node__content img {
+  float: left;
+  margin: 10px 10px 10px 5px;
+}
+
+.node-2 .node__content p {
+  text-align: justify;
 }
