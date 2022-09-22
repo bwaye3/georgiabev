@@ -169,14 +169,17 @@ div#block-gaviascontentbuilderfrontlogos img {
 }
 
 #block-gaviascontentbuilderfrontlogos .bb-container.container-fw {
-  border-top: 4px solid #de4928;
-  border-bottom: 4px solid #de4928;
   padding: 30px 0;
 }
 
 #block-gaviascontentbuilderfrontlogos .gbb-row .bb-inner {
   padding-top: 0;
   padding-bottom: 0;
+}
+
+div#block-gaviascontentbuilderfrontlogos {
+  margin: 0 3rem;
+  border-top: 1px solid #e9ecef;
 }
 
 div#block-gabevmap h2.block-title::before {
@@ -191,6 +194,10 @@ h2#block-menusecond-2-menu::before {
   color: #de4928;
   content: '\f0c9';
   margin: 0 .5rem 0 0;
+}
+
+span.gva-map-content-popup span.image {
+  display: none !important
 }
 
 div#block-addthis {
@@ -430,6 +437,11 @@ div#block-addthis {
 .georgiabev-title .item-columns {
   padding: 0 3.2rem !important;
 }
+
+div#block-twitterbutton {
+  display: block;
+  padding-bottom: 30px;
+}
 /**/
 
 /* Footer */
@@ -438,8 +450,8 @@ div#block-addthis {
 }
 
 #footer .copyright {
-  background: #de4928;
-  border-top: 1px solid #de4928;
+  background: #2f2f2f;
+  border-top: 1px solid #2f2f2f;
   color: white;
   padding: 20px 0;
 }
