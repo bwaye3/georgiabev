@@ -1,0 +1,224 @@
+# Ignore sensitive information
+/web/sites/*/settings.php
+
+
+_sql
+# Place local settings in settings.local.php
+sites/*/settings.local.php
+sites/*/settings.php
+sites/*/example.settings.local.php
+sites/*/example.sites.php
+/web/sites/*/settings.local.php
+/web/sites/*/default.services.php
+/web/sites/*/default.settings.php
+web/modules/README.txt
+web/example.gitignore
+web/INSTALL.txt
+web/README.md
+web/themes/README.txt
+web/sites/development.services.yml
+web/sites/example.settings.local.php
+web/sites/example.sites.php
+web/sites/README.txt
+web/sites/default/default.services.yml
+web/sites/default/default.settings.php
+web/sites/default/development.services.yml
+web/sites/default/settings.local.php
+
+# Ignore Drupal's file directory
+/web/sites/*/files/
+/web/sites/default/files/js/
+
+# gitignore template for Drupal 8 projects
+#
+# earlier versions of Drupal are tracked in `community/PHP/`
+.sql
+
+# Ignore configuration files that may contain sensitive information
+/web/sites/*/*settings*.php
+/web/sites/*/*services*.yml
+/web/sites/development.services.yml
+/web/sites/default/settings.local.php
+/web/sites/default/settings.php
+
+# Ignore paths that may contain user-generated content
+/web/sites/*/files
+/web/sites/*/public
+/web/sites/*/private
+/web/sites/*/files-public
+/web/sites/*/files-private
+
+
+# Ignore paths that may contain temporary files
+/web/sites/*/translations
+/web/sites/*/tmp
+/web/sites/*/cache
+
+# Ignore testing related files
+/sites/simpletest
+
+/web/example.gitignore
+/web/INSTALL.txt
+/web/README.md
+
+# Ignore drupal core (if not versioning drupal sources)
+.cpanel.yml
+/.cpanel.yml
+#/web/core
+#/web/modules
+/web/modules/.gitkeep
+/web/modules/custom/.gitkeep
+#/vendor
+#/web/.csslintrc
+#/web/.editorconfig
+#/web/.eslintignore
+#/web/.eslintrc.json
+#/web/.gitattributes
+/web/.htaccess
+#/autoload.php
+#/composer.lock
+#/web/index.php
+#/web/robots.txt
+#/web/update.php
+#/web/web.config
+/example.gitignore
+/web/profiles/*
+/web/sites/README.txt
+/web/sites/example.sites.php
+/web/sites/example.settings.local.php
+/web/themes/README.txt
+/web/themes/.gitkeep
+/web/LICENSE.txt
+/web/README.txt
+
+# Ignore paths that contain user-generated content <set by MHA>.
+sites/*/files
+#sites/*/private
+#files/*
+
+
+# Note that services.local.yml is not loaded by default. If you would like
+# to use this file add the following to your settings.local.php file:
+#   $settings['container_yamls'][] = __DIR__ . '/services.local.yml';
+sites/*/services.local.yml
+
+# Ignore OS garbage
+.DS_Store
+
+
+LICENSE
+README.md
+.env.example
+
+# .HTACCESS
+backup.htaccess-11-25-2019
+.backup.htaccess-12-5-20
+bkp.htaccess
+.bkup.htaccess
+.htaccess
+
+# Packages #
+############
+*.7z
+*.dmg
+*.gz
+*.bz2
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+*.tgz
+
+# Logs and databases #
+######################
+*.log
+# *.sql
+
+ehthumbs.db
+Icon
+
+Thumbs.db
+._*
+
+# Vim generated files #
+######################
+*.un~
+
+# SASS #
+##########
+.sass-cache
+
+# Things in the core directory that Drupal 8 commits in the repository.
+!core/**/*.gz
+
+# Created by https://www.gitignore.io/api/phpstorm
+
+### PhpStorm ###
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and Webstorm
+# Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
+
+# User-specific stuff:
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/dictionaries
+
+# Sensitive or high-churn files:
+.idea/**/dataSources/
+.idea/**/dataSources.ids
+.idea/**/dataSources.xml
+.idea/**/dataSources.local.xml
+.idea/**/sqlDataSources.xml
+.idea/**/dynamic.xml
+.idea/**/uiDesigner.xml
+
+# Gradle:
+.idea/**/gradle.xml
+.idea/**/libraries
+
+# CMake
+cmake-build-debug/
+
+# Mongo Explorer plugin:
+.idea/**/mongoSettings.xml
+
+## File-based project format:
+*.iws
+
+## Plugin-specific files:
+
+# IntelliJ
+/out/
+
+# mpeltonen/sbt-idea plugin
+.idea_modules/
+
+# JIRA plugin
+atlassian-ide-plugin.xml
+
+# Cursive Clojure plugin
+.idea/replstate.xml
+
+# Ruby plugin and RubyMine
+/.rakeTasks
+
+# Crashlytics plugin (for Android Studio and IntelliJ)
+com_crashlytics_export_strings.xml
+crashlytics.properties
+crashlytics-build.properties
+fabric.properties
+
+### PhpStorm Patch ###
+# Comment Reason: https://github.com/joeblau/gitignore.io/issues/186#issuecomment-215987721
+
+# *.iml
+# modules.xml
+# .idea/misc.xml
+# *.ipr
+ .idea/workspace.xml
+# Sonarlint plugin
+.idea/sonarlint
+.idea
+
+# End of https://www.gitignore.io/api/phpstorm
+
