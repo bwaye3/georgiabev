@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '0a093664f70fd214c90c6a52076c37adb424d31d',
+        'reference' => '41f87df8c2c0e29117ac7f1eae75f4c0edb3e6d7',
         'name' => 'drupal/legacy-project',
         'dev' => true,
     ),
@@ -503,12 +503,12 @@
             'dev_requirement' => false,
         ),
         'drupal/devel' => array(
-            'pretty_version' => '4.1.5',
-            'version' => '4.1.5.0',
+            'pretty_version' => '4.2.0',
+            'version' => '4.2.0.0',
             'type' => 'drupal-module',
             'install_path' => __DIR__ . '/../../web/modules/contrib/devel',
             'aliases' => array(),
-            'reference' => '4.1.5',
+            'reference' => '4.2.0',
             'dev_requirement' => false,
         ),
         'drupal/dropdown_language' => array(
@@ -625,7 +625,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '0a093664f70fd214c90c6a52076c37adb424d31d',
+            'reference' => '41f87df8c2c0e29117ac7f1eae75f4c0edb3e6d7',
             'dev_requirement' => false,
         ),
         'drupal/mailchimp' => array(
