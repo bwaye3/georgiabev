@@ -1,0 +1,25 @@
+{# Twitter feed  #}
+<div class="row twitter-wrapper mb-3">
+    <div class="col mb-4">
+
+        <div class="tweet-screen">
+            <h6>@{{ source.screen_name }}</h6>
+        </div>
+
+        <div class="tweet-text">
+            {{ text }}
+        </div>
+
+        <div class="twitter-date-time">
+            {# Time #}
+            {% set twittertime = date.stamp|date('g:iA', false) %}
+            {% set twitterdate = date.stamp|date('M d Y', false) %}
+            <time class="timeago" datetime="{{ date.stamp }}">
+                <span class="twitter-date mr-2">{{ twitterdate }}</span>
+                <span class="twitter-time">{{ twittertime }}</span>
+            </time>
+        </div>
+
+    </div>
+</div>
+

@@ -170,7 +170,7 @@ div#block-gaviascontentbuilderfrontlogos img {
 
 #block-gaviascontentbuilderfrontlogos .bb-container.container-fw {
   border-top: 1px solid #ebebeb;
-  border-bottom: 1px solid #ebebeb;
+  border-bottom: 1px solid #ffffff;
   padding: 30px 0;
 }
 
@@ -414,13 +414,81 @@ div#block-addthis {
   margin: 0 0 1rem;
 }
 
-#footer {
+#footer .footer-center {
   color: white;
   background: url(/themes/custom/ziston_sub/images/bg-footer.jpg) no-repeat #3e3e3e;
 }
 
 #footer .content-right .title {
   text-transform: initial !important;
+}
+
+/* Twitter footer */
+#footer p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #262626;
+}
+
+#footer .footer-top {
+  color: #262626; !important;
+  background: #fff !important;
+}
+
+#footer .contextual a,
+.contextual a {
+  color: #262626; !important;
+}
+
+ul.twitter-feed li {
+  background: #fff !important;
+}
+
+ul.twitter-feed li {
+  display: inline-flex;
+  width: 25%;
+}
+
+#footer .footer-top .block .block-title span {
+  color: dimgrey !important;
+}
+
+#footer .footer-top h2.block-title::before {
+  font-family: 'FontAwesome';
+  color: #de4928;
+  content: '\f099';
+  margin: 0 .5rem 0 0;
+}
+
+.twitter-wrapper a,
+.twitter-wrapper a:link{
+  color: #de4928 !important;
+}
+
+.twitter-wrapper h6 {
+  color: #52808e !important;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+
+#footer .twitter-wrapper p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #262626;
+  font-size: .9rem;
+  line-height: 1.7;
+}
+
+span.twitter-date,
+span.twitter-time {
+  font-size: .8rem;
+  font-weight: 500;
+  margin: 0 10px 0 0;
+}
+
+.twitter-wrapper .col {
+  padding: 0 4rem 0 0 !important;
 }
 /**/
 
@@ -748,5 +816,10 @@ span.site-branding-logo-footer-links {
 
   .gva-offcanvas-mobile .gva-navigation .gva_menu > li ul.menu.sub-menu li a {
     line-height: 1.4;
+  }
+
+  ul.twitter-feed li {
+    display: inline-flex;
+    width: 100%;
   }
 }

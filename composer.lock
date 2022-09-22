@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0f83b9a9b01d6a93565bbcd9644d5426",
+    "content-hash": "cadbde55496a9480d1f84bbaf462f400",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3961,6 +3961,58 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/twitter_embed",
                 "issues": "https://www.drupal.org/project/issues/twitter_embed"
+            }
+        },
+        {
+            "name": "drupal/twitter_feed",
+            "version": "1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/twitter_feed.git",
+                "reference": "8.x-1.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/twitter_feed-8.x-1.4.zip",
+                "reference": "8.x-1.4",
+                "shasum": "fdee927bfb951962c649d4e26d0582d502db7594"
+            },
+            "require": {
+                "drupal/core": "^8.8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.4",
+                    "datestamp": "1658562253",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "adrianopulz",
+                    "homepage": "https://www.drupal.org/user/1327214"
+                },
+                {
+                    "name": "Fidelix",
+                    "homepage": "https://www.drupal.org/user/786032"
+                },
+                {
+                    "name": "ravimane23",
+                    "homepage": "https://www.drupal.org/user/2616789"
+                }
+            ],
+            "description": "Displays a list of tweets on a block",
+            "homepage": "https://www.drupal.org/project/twitter_feed",
+            "support": {
+                "source": "https://git.drupalcode.org/project/twitter_feed"
             }
         },
         {

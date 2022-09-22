@@ -4124,6 +4124,61 @@
             "install-path": "../../web/modules/contrib/twitter_embed"
         },
         {
+            "name": "drupal/twitter_feed",
+            "version": "1.4.0",
+            "version_normalized": "1.4.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/twitter_feed.git",
+                "reference": "8.x-1.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/twitter_feed-8.x-1.4.zip",
+                "reference": "8.x-1.4",
+                "shasum": "fdee927bfb951962c649d4e26d0582d502db7594"
+            },
+            "require": {
+                "drupal/core": "^8.8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "8.x-1.4",
+                    "datestamp": "1658562253",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "installation-source": "dist",
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "adrianopulz",
+                    "homepage": "https://www.drupal.org/user/1327214"
+                },
+                {
+                    "name": "Fidelix",
+                    "homepage": "https://www.drupal.org/user/786032"
+                },
+                {
+                    "name": "ravimane23",
+                    "homepage": "https://www.drupal.org/user/2616789"
+                }
+            ],
+            "description": "Displays a list of tweets on a block",
+            "homepage": "https://www.drupal.org/project/twitter_feed",
+            "support": {
+                "source": "https://git.drupalcode.org/project/twitter_feed"
+            },
+            "install-path": "../../web/modules/contrib/twitter_feed"
+        },
+        {
             "name": "drupal/views_infinite_scroll",
             "version": "2.0.0",
             "version_normalized": "2.0.0.0",
