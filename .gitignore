@@ -1,10 +1,33 @@
+# Ignore sensitive information
+/web/sites/*/settings.php
+
+_sql
+# Place local settings in settings.local.php
+sites/*/settings.local.php
+sites/*/settings.php
+sites/*/example.settings.local.php
+sites/*/example.sites.php
+/web/sites/*/settings.local.php
+/web/sites/*/default.services.php
+/web/sites/*/default.settings.php
+web/modules/README.txt
+
+
+# Ignore Drupal's file directory
+/web/sites/*/files/
+/web/sites/default/files/js/
+
 # gitignore template for Drupal 8 projects
 #
 # earlier versions of Drupal are tracked in `community/PHP/`
+.sql
 
 # Ignore configuration files that may contain sensitive information
 /web/sites/*/*settings*.php
 /web/sites/*/*services*.yml
+/web/sites/development.services.yml
+/web/sites/default/settings.local.php
+/web/sites/default/settings.php
 
 # Ignore paths that may contain user-generated content
 /web/sites/*/files
@@ -12,6 +35,7 @@
 /web/sites/*/private
 /web/sites/*/files-public
 /web/sites/*/files-private
+
 
 # Ignore paths that may contain temporary files
 /web/sites/*/translations
@@ -21,16 +45,24 @@
 # Ignore testing related files
 /sites/simpletest
 
+/web/example.gitignore
+/web/INSTALL.txt
+/web/README.md
+
 # Ignore drupal core (if not versioning drupal sources)
+.cpanel.yml
+/.cpanel.yml
 #/web/core
 #/web/modules
+/web/modules/.gitkeep
+/web/modules/custom/.gitkeep
 #/vendor
 #/web/.csslintrc
 #/web/.editorconfig
 #/web/.eslintignore
 #/web/.eslintrc.json
 #/web/.gitattributes
-#/web/.htaccess
+/web/.htaccess
 #/autoload.php
 #/composer.lock
 #/web/index.php
@@ -38,22 +70,75 @@
 #/web/update.php
 #/web/web.config
 /example.gitignore
-/web/profiles/README.txt
+/web/profiles/*
 /web/sites/README.txt
 /web/sites/example.sites.php
 /web/sites/example.settings.local.php
-/web/sites/development.services.yml
 /web/themes/README.txt
+/web/themes/.gitkeep
 /web/LICENSE.txt
 /web/README.txt
-/web/example.gitignore
-/web/README.md
-/web/INSTALL.txt
-README.md
-/web/modules/README.txt
+
+# Ignore paths that contain user-generated content <set by MHA>.
+sites/*/files
+#sites/*/private
+#files/*
+
+
+# Note that services.local.yml is not loaded by default. If you would like
+# to use this file add the following to your settings.local.php file:
+#   $settings['container_yamls'][] = __DIR__ . '/services.local.yml';
+sites/*/services.local.yml
 
 # Ignore OS garbage
 .DS_Store
+
+
+LICENSE
+README.md
+.env.example
+
+# .HTACCESS
+backup.htaccess-11-25-2019
+.backup.htaccess-12-5-20
+bkp.htaccess
+.bkup.htaccess
+.htaccess
+
+# Packages #
+############
+*.7z
+*.dmg
+*.gz
+*.bz2
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+*.tgz
+
+# Logs and databases #
+######################
+*.log
+# *.sql
+
+ehthumbs.db
+Icon
+
+Thumbs.db
+._*
+
+# Vim generated files #
+######################
+*.un~
+
+# SASS #
+##########
+.sass-cache
+
+# Things in the core directory that Drupal 8 commits in the repository.
+!core/**/*.gz
 
 # Created by https://www.gitignore.io/api/phpstorm
 
@@ -62,7 +147,6 @@ README.md
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
 # User-specific stuff:
-.idea
 .idea/**/workspace.xml
 .idea/**/tasks.xml
 .idea/dictionaries
@@ -119,25 +203,10 @@ fabric.properties
 # modules.xml
 # .idea/misc.xml
 # *.ipr
-.idea/workspace.xml
+ .idea/workspace.xml
 # Sonarlint plugin
 .idea/sonarlint
+.idea
+
 # End of https://www.gitignore.io/api/phpstorm
 
-# Ignore binaries.
-/bin
-
-# Ignore local drush aliases
-drush/local.aliases.drushrc.php
-
-# Ignore directories generated Node.js
-node_modules
-
-# ignore local configuration files.
-php.ini
-
-# Ignore SimpleTest multi-site environment.
-web/sites/simpletest
-
-#ignore logs
-error_log
