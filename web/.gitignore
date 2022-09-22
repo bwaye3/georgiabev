@@ -1,8 +1,7 @@
 # Ignore sensitive information
 /web/sites/*/settings.php
-
-
 _sql
+/_sql
 # Place local settings in settings.local.php
 sites/*/settings.local.php
 sites/*/settings.php
@@ -25,6 +24,20 @@ web/sites/default/default.settings.php
 web/sites/default/development.services.yml
 web/sites/default/settings.local.php
 
+/web/modules/README.txt
+/web/example.gitignore
+/web/INSTALL.txt
+/web/README.md
+/web/themes/README.txt
+/web/sites/development.services.yml
+/web/sites/example.settings.local.php
+/web/sites/example.sites.php
+/web/sites/README.txt
+/web/sites/default/default.services.yml
+/web/sites/default/default.settings.php
+/web/sites/default/development.services.yml
+/web/sites/default/settings.local.php
+
 # Ignore Drupal's file directory
 /web/sites/*/files/
 /web/sites/default/files/js/
@@ -37,8 +50,6 @@ web/sites/default/settings.local.php
 # Ignore configuration files that may contain sensitive information
 /web/sites/*/*settings*.php
 /web/sites/*/*services*.yml
-/web/sites/development.services.yml
-/web/sites/default/settings.local.php
 /web/sites/default/settings.php
 
 # Ignore paths that may contain user-generated content
@@ -56,10 +67,6 @@ web/sites/default/settings.local.php
 
 # Ignore testing related files
 /sites/simpletest
-
-/web/example.gitignore
-/web/INSTALL.txt
-/web/README.md
 
 # Ignore drupal core (if not versioning drupal sources)
 .cpanel.yml
@@ -83,10 +90,6 @@ web/sites/default/settings.local.php
 #/web/web.config
 /example.gitignore
 /web/profiles/*
-/web/sites/README.txt
-/web/sites/example.sites.php
-/web/sites/example.settings.local.php
-/web/themes/README.txt
 /web/themes/.gitkeep
 /web/LICENSE.txt
 /web/README.txt
