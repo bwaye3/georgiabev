@@ -240,6 +240,7 @@ div#block-addthis {
   margin-bottom: 2rem;
   padding-bottom: 0;
 }
+
 .sidebar h2.block-title {
   color: #52808e !important;
   font-size: 20px !important;
@@ -407,6 +408,28 @@ div#block-addthis {
   line-height: 1.2;
 }
 
+.georgiabev-title  h5 a {
+  color: #de4928;
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 1.1;
+}
+
+.georgiabev-title h5 {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.georgiabev-title p {
+  font-size: .85rem;
+  line-height: 1.3;
+  border-bottom: 1px solid #e3e0e0;
+  padding-bottom: 10px;
+}
+
+.georgiabev-title .item-columns {
+  padding: 0 3.2rem !important;
+}
 /**/
 
 /* Footer */
@@ -709,7 +732,6 @@ body .copyright-inner {
 .control-search-2 a {
   color: white !important;
 }
-
 
 span.site-branding-logo-footer {
   margin: 0 1rem 0 0;
