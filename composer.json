@@ -68,7 +68,8 @@
         "enable-patching": true,
         "patches": {
             "drupal/twitter_feed": {
-                "Twitter library call fix": "https://www.drupal.org/files/issues/2022-09-20/twitter_feed-3096291-7.patch"
+                "Twitter library call fix": "https://www.drupal.org/files/issues/2022-09-20/twitter_feed-3096291-7.patch",
+                "Twitter image": "https://www.drupal.org/files/issues/2019-04-03/2908152-tweet-images.patch"
             }
         },
         "drupal-scaffold": {

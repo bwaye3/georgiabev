@@ -36,6 +36,7 @@ b, strong {
   color: #797f89;
   font-size: 96%;
 }
+
 /**/
 
 /* Navigation */
@@ -132,6 +133,7 @@ h2.page-title::after {
 .breadcrumb-content-inner .gva-block-breadcrumb .breadcrumb-links {
   display: none;
 }
+
 /**/
 
 /* Sidebar */
@@ -153,6 +155,7 @@ h2.page-title::after {
 .sidebar img {
   margin: 0 0 3rem;
 }
+
 /**/
 
 /* Blocks */
@@ -208,7 +211,7 @@ div#block-addthis {
   color: #52808e !important;
   font-size: 14px !important;
   padding: 0 !important;
-  margin: 0 0 0.5rem .3rem!important;
+  margin: 0 0 0.5rem .3rem !important;
 }
 
 #block-addthis h2.block-title::before {
@@ -272,7 +275,7 @@ div#block-addthis {
   line-height: 1.2;
 }
 
-.node-134  h3 {
+.node-134 h3 {
   font-size: 22px;
   line-height: 1.2;
 }
@@ -292,6 +295,7 @@ div#block-addthis {
   min-height: 210px;
   margin: 0 0 25px;
 }
+
 /**/
 
 /* Top bar */
@@ -308,6 +312,7 @@ div#block-addthis {
 .topbar .topbar-wrapper .topbar-content a:hover {
   color: white;
 }
+
 /**/
 
 /* Header */
@@ -374,6 +379,7 @@ div#block-addthis {
   box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
   -webkit-transition: all 0.35s;
 }
+
 /**/
 
 /* Front Node */
@@ -415,7 +421,7 @@ div#block-addthis {
   line-height: 1.2;
 }
 
-.georgiabev-title  h5 a {
+.georgiabev-title h5 a {
   color: #de4928;
   text-decoration: none;
   font-size: 1rem;
@@ -442,6 +448,7 @@ div#block-twitterbutton {
   display: block;
   padding-bottom: 30px;
 }
+
 /**/
 
 /* Footer */
@@ -475,6 +482,7 @@ div#block-twitterbutton {
   margin-bottom: 1rem;
   color: white;
 }
+
 #footer .gva-navigation {
   margin: 0;
 }
@@ -512,13 +520,15 @@ div#block-twitterbutton {
 }
 
 #footer .footer-top {
-  color: #262626; !important;
+  color: #262626;
+!important;
   background: #fff !important;
 }
 
 #footer .contextual a,
 .contextual a {
-  color: #262626; !important;
+  color: #262626;
+!important;
 }
 
 ul.twitter-feed li {
@@ -542,8 +552,8 @@ ul.twitter-feed li {
 }
 
 .twitter-wrapper a,
-.twitter-wrapper a:link{
-  color: #de4928 !important;
+.twitter-wrapper a:link {
+  color: #de4928;
 }
 
 .twitter-wrapper h6 {
@@ -552,6 +562,9 @@ ul.twitter-feed li {
   margin-bottom: 10px;
 }
 
+.twitter-wrap-it {
+  padding: 0 0 0 10px;
+}
 
 #footer .twitter-wrapper p {
   margin-top: 0;
@@ -564,13 +577,14 @@ ul.twitter-feed li {
 span.twitter-date,
 span.twitter-time {
   font-size: .8rem;
-  font-weight: 500;
+  font-weight: 800;
   margin: 0 10px 0 0;
 }
 
 .twitter-wrapper .col {
   padding: 0 4rem 0 0 !important;
 }
+
 /**/
 
 /* Floating Bubbles */
@@ -615,6 +629,7 @@ span.twitter-time {
   bottom: -30px;
   z-index: 1;
 }
+
 .bubble-animated-one {
   -webkit-animation-delay: 2s;
   left: 10%;
@@ -642,6 +657,7 @@ span.twitter-time {
   width: 50px;
   left: 85%;
 }
+
 /**/
 
 /* Miscellaneous */
@@ -788,7 +804,7 @@ span.site-branding-logo-footer-links {
   transform: rotate(360deg);
 }
 
-.col.contact-block{
+.col.contact-block {
   padding: 0 0 0 30px !important;
 }
 
@@ -832,6 +848,51 @@ div#block-twitterfeedblock h2.block-title::before {
   margin-bottom: 1rem !important;
   border-bottom: 1px solid #e7e7e7;
   padding: 0 0 .5rem;
+}
+
+.node-2 .node__content img {
+  float: left;
+  margin: 10px 10px 10px 5px;
+}
+
+.node-2 .node__content p {
+  text-align: justify;
+}
+
+.twitter-feed-wrapper {
+  margin: 2rem 3rem !important;
+  padding: 0;
+}
+
+.timeago {
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.tweet-text p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #6f6f6f;
+  margin-bottom: 5px;
+}
+
+.twitter-date::before {
+  font-family: 'FontAwesome';
+  color: #de4928;
+  content: '\f133';
+  margin: 0 .5rem 0 0;
+}
+
+.twitter-time::before,
+.timeago::before {
+  font-family: 'FontAwesome';
+  color: #de4928;
+  content: '\f017';
+  margin: 0 .5rem 0 0;
+}
+
+.tweet-screen h6 a {
+  color: #52808e !important;
 }
 
 /*******/
@@ -904,7 +965,7 @@ div#block-twitterfeedblock h2.block-title::before {
   }
 
   .frontpage .breadcrumb-content-inner .gva-block-breadcrumb.text-light .page-title {
-    font-size: 27px !important;
+    font-size: 24px !important;
   }
 
   .topbar .topbar-wrapper .topbar-content .topbar-right {
@@ -935,13 +996,37 @@ div#block-twitterfeedblock h2.block-title::before {
     display: inline-flex;
     width: 100%;
   }
+
+  .sidebar .block {
+    background: #F0F3F6;
+    padding: 15px 15px;
+  }
+
+  .twitter-feed-wrapper {
+    margin: 1rem 15px !important;
+    padding: 0;
+  }
+
+  div#block-gaviascontentbuilderfrontlogos {
+    margin: 0;
+  }
+
+  h5 {
+    font-size: 1.1rem;
+  }
+
+  body {
+    font-size: .95rem;
+    line-height: 1.5;
+  }
+
+  .sidebar {
+    margin: 30px 0 0;
+  }
+
+  .sidebar .block {
+    background: #fff;
+  }
+
 }
 
-.node-2 .node__content img {
-  float: left;
-  margin: 10px 10px 10px 5px;
-}
-
-.node-2 .node__content p {
-  text-align: justify;
-}
