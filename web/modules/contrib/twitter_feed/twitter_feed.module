@@ -170,6 +170,10 @@ function template_preprocess_twitter_feed_item(&$vars) {
   $vars['date']['clean'] = \Drupal::service('date.formatter')->format(strtotime($tweet->created_at), 'short');
   $vars['source']['screen_name'] = $tweet->user->screen_name;
   $vars['source']['name'] = $tweet->user->name;
+    if (isset($tweet->extended_entities->media[0])) {
+    $vars['image']['src'] = $tweet->extended_entities->media[0]->media_url_https;
+    $vars['image']['alt'] = '';
+    }
 }
 
 /**
