@@ -41,6 +41,7 @@
         "drupal/module_filter": "^3.2",
         "drupal/pathauto": "^1.11",
         "drupal/token": "^1.11",
+        "drupal/twig_tweak": "^3.1",
         "drupal/twitter_block": "^3.0@alpha",
         "drupal/twitter_embed": "^1.0@alpha",
         "drupal/twitter_feed": "^1.4",
@@ -127,5 +128,8 @@
                 "      composer remove drupal/core-project-message"
             ]
         }
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^5.4"
     }
 }

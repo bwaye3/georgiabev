@@ -393,6 +393,10 @@ div#block-addthis {
   color: #797f89;
 }
 
+#block-views-block-listing-content-block-1 h5 {
+  line-height: 1.2;
+}
+
 .frontpage .breadcrumb-content-inner .gva-block-breadcrumb.text-light .page-title {
   top: 110px;
   position: absolute;
@@ -829,8 +833,38 @@ span.site-branding-logo-footer-links {
   display: inline-flex;
 }
 
-#member-block ul li {
-  list-style: none !important;
+.js-pager__items ul {
+  margin: 0 0 1rem;
+  padding-left: 0;
+}
+
+.view-content-wrapper nav ul {
+  list-style-type: none !important;
+  margin: 0 0 .5rem 0;
+  padding: 0 !important;
+}
+
+.view-content-wrapper .js-pager__items li {
+  font-weight: 500;
+  font-size: .9rem;
+  margin: 0 5px
+}
+
+.view-content-wrapper nav {
+  text-align: center;
+}
+
+.js-pager__items a {
+  color: #de4928;
+  border: 1px solid #de4928;
+  padding: 0 4px 1.5px 5px;
+  border-radius: 2px;
+}
+
+.js-pager__items a:hover {
+  color: #fff;
+  background: #de4928;
+  text-decoration: none;
 }
 
 .more-link {

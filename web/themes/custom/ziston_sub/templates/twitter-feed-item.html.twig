@@ -1,4 +1,6 @@
 {# Twitter feed  #}
+{# {{ drupal_dump(text) }} #}
+
 <div class="wow fadeInUp animated" data-wow-delay="0.4s"
      style="visibility: visible; opacity: 1; animation-delay: 0.4s; animation-name: fadeInUp;">
     <div class="row twitter-wrapper mb-3">
@@ -10,8 +12,9 @@
                 </h6>
             </div>
             <div class="twitter-wrap-it">
+
                 {% if image is defined %}
-                    <div class="tweet-image">
+                    <div class="tweet-image mb-2">
                         <img src="{{ image.src }}" alt="{{ image.alt }}">
                     </div>
                 {% endif %}

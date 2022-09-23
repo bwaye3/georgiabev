@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '423f87a9f9ea1a9a79cd873ae68715efe98eb1ae',
+        'reference' => '4cf9af30dafa6ac695d1201dd146fd00f4d9e4f5',
         'name' => 'drupal/legacy-project',
         'dev' => true,
     ),
@@ -625,7 +625,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '423f87a9f9ea1a9a79cd873ae68715efe98eb1ae',
+            'reference' => '4cf9af30dafa6ac695d1201dd146fd00f4d9e4f5',
             'dev_requirement' => false,
         ),
         'drupal/mailchimp' => array(
@@ -671,6 +671,15 @@
             'install_path' => __DIR__ . '/../../web/modules/contrib/token',
             'aliases' => array(),
             'reference' => '8.x-1.11',
+            'dev_requirement' => false,
+        ),
+        'drupal/twig_tweak' => array(
+            'pretty_version' => '3.1.3',
+            'version' => '3.1.3.0',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../web/modules/contrib/twig_tweak',
+            'aliases' => array(),
+            'reference' => '3.1.3',
             'dev_requirement' => false,
         ),
         'drupal/twitter_block' => array(
