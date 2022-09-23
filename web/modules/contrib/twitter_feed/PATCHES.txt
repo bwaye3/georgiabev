@@ -5,3 +5,7 @@ Twitter library call fix
 Source: https://www.drupal.org/files/issues/2022-09-20/twitter_feed-3096291-7.patch
 
 
+Twitter image
+Source: https://www.drupal.org/files/issues/2019-04-03/2908152-tweet-images.patch
+
+

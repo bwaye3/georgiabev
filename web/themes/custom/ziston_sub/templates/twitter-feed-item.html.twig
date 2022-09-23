@@ -1,27 +1,38 @@
 {# Twitter feed  #}
-<div class="wow fadeInUp animated" data-wow-delay="0.4s" style="visibility: visible; opacity: 1; animation-delay: 0.4s; animation-name: fadeInUp;">
-<div class="row twitter-wrapper mb-3">
-    <div class="col mb-4">
+<div class="wow fadeInUp animated" data-wow-delay="0.4s"
+     style="visibility: visible; opacity: 1; animation-delay: 0.4s; animation-name: fadeInUp;">
+    <div class="row twitter-wrapper mb-3">
+        <div class="col mb-4">
 
-        <div class="tweet-screen">
-            <h6>@{{ source.screen_name }}</h6>
-        </div>
+            <div class="tweet-screen">
+                <h6>
+                    <a href="https://twitter.com/gabeverage">@{{ source.screen_name }}</a>
+                </h6>
+            </div>
+            <div class="twitter-wrap-it">
+                {% if image is defined %}
+                    <div class="tweet-image">
+                        <img src="{{ image.src }}" alt="{{ image.alt }}">
+                    </div>
+                {% endif %}
 
-        <div class="tweet-text">
-            {{ text }}
-        </div>
+                <div class="tweet-text">
+                    {{ text }}
+                </div>
+                <div class="tweet-timeago">
+                    <time class="timeago" datetime="{{ date.stamp }}">{{ date.clean }}</time>
+                </div>
 
-        <div class="twitter-date-time">
-            {# Time #}
-            {% set twittertime = date.stamp|date('g:iA', false) %}
-            {% set twitterdate = date.stamp|date('M d Y', false) %}
-            <time class="timeago" datetime="{{ date.stamp }}">
+                {# Time
+            <div class="twitter-date-time">
+                {% set twittertime = date.stamp|date('g:iA', false) %}
+                {% set twitterdate = date.stamp|date('M d Y', false) %}
                 <span class="twitter-date mr-2">{{ twitterdate }}</span>
                 <span class="twitter-time">{{ twittertime }}</span>
-            </time>
-        </div>
+            </div>
+                #}
 
+            </div>
+        </div>
     </div>
 </div>
-</div>
-

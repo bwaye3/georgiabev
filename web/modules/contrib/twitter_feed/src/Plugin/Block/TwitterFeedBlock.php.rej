@@ -1,0 +1,34 @@
+***************
+*** 151,163 ****
+        // https://dev.twitter.com/rest/reference/get/statuses/user_timeline
+        $username = $this->configuration['username'];
+        $num_tweets = $this->configuration['number_of_tweets'];
+        $options['headers']['Authorization'] = "{$body->token_type} $access_token";
+        unset($options['headers']['Content-Length']);
+        unset($options['form_params']);
+-       $query = http_build_query([
+          'screen_name' => $username,
+          'count' => $num_tweets,
+-       ]);
+        // Fetches the tweets.
+        $res = $this->httpClient->get("https://api.twitter.com/1.1/statuses/user_timeline.json?$query", $options);
+      }
+--- 151,168 ----
+        // https://dev.twitter.com/rest/reference/get/statuses/user_timeline
+        $username = $this->configuration['username'];
+        $num_tweets = $this->configuration['number_of_tweets'];
++       $display_images = $this->configuration['display_images'];
+        $options['headers']['Authorization'] = "{$body->token_type} $access_token";
+        unset($options['headers']['Content-Length']);
+        unset($options['form_params']);
++       $query_args = [
+          'screen_name' => $username,
+          'count' => $num_tweets,
++       ];
++       if ($display_images) {
++         $query_args['tweet_mode'] = 'extended';
++       }
++       $query = http_build_query($query_args);
+        // Fetches the tweets.
+        $res = $this->httpClient->get("https://api.twitter.com/1.1/statuses/user_timeline.json?$query", $options);
+      }

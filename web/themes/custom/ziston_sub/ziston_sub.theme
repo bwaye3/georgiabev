@@ -9,6 +9,6 @@ function ziston_sub_preprocess_html(&$variables) {
   }
 
 }
-function ziston_sub__preprocess(&$variables, $hook) {
+function ziston_sub_preprocess(&$variables, $hook) {
   $variables['base_path'] = base_path();
 }
