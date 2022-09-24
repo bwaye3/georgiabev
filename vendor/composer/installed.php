@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'ca98eee0baa6c36e153969518e6b13436a0833aa',
+        'reference' => 'a32cf442dd644d85d0e0ca72ba12a6dda578b8ac',
         'name' => 'drupal/legacy-project',
         'dev' => true,
     ),
@@ -625,7 +625,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'ca98eee0baa6c36e153969518e6b13436a0833aa',
+            'reference' => 'a32cf442dd644d85d0e0ca72ba12a6dda578b8ac',
             'dev_requirement' => false,
         ),
         'drupal/mailchimp' => array(
@@ -698,15 +698,6 @@
             'install_path' => __DIR__ . '/../../web/modules/contrib/twitter_embed',
             'aliases' => array(),
             'reference' => '8.x-1.0-alpha2',
-            'dev_requirement' => false,
-        ),
-        'drupal/twitter_feed' => array(
-            'pretty_version' => '1.4.0',
-            'version' => '1.4.0.0',
-            'type' => 'drupal-module',
-            'install_path' => __DIR__ . '/../../web/modules/contrib/twitter_feed',
-            'aliases' => array(),
-            'reference' => '8.x-1.4',
             'dev_requirement' => false,
         ),
         'drupal/views_infinite_scroll' => array(
