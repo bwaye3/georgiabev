@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '4cf9af30dafa6ac695d1201dd146fd00f4d9e4f5',
+        'reference' => 'ca98eee0baa6c36e153969518e6b13436a0833aa',
         'name' => 'drupal/legacy-project',
         'dev' => true,
     ),
@@ -625,7 +625,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '4cf9af30dafa6ac695d1201dd146fd00f4d9e4f5',
+            'reference' => 'ca98eee0baa6c36e153969518e6b13436a0833aa',
             'dev_requirement' => false,
         ),
         'drupal/mailchimp' => array(
@@ -728,12 +728,12 @@
             'dev_requirement' => false,
         ),
         'drush/drush' => array(
-            'pretty_version' => '11.1.1',
-            'version' => '11.1.1.0',
+            'pretty_version' => '11.2.1',
+            'version' => '11.2.1.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../drush/drush',
             'aliases' => array(),
-            'reference' => '5ee249f4e511d65c099e86317719fb3a15370e6b',
+            'reference' => '95123e003c96f4c57299fa277ef60457041cae1a',
             'dev_requirement' => false,
         ),
         'egulias/email-validator' => array(
