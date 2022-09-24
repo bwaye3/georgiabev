@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'a32cf442dd644d85d0e0ca72ba12a6dda578b8ac',
+        'reference' => '03e9ff6b4be55230e805776d21678cb8aec059ec',
         'name' => 'drupal/legacy-project',
         'dev' => true,
     ),
@@ -625,7 +625,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'a32cf442dd644d85d0e0ca72ba12a6dda578b8ac',
+            'reference' => '03e9ff6b4be55230e805776d21678cb8aec059ec',
             'dev_requirement' => false,
         ),
         'drupal/mailchimp' => array(
@@ -662,6 +662,15 @@
             'install_path' => __DIR__ . '/../../web/modules/contrib/pathauto',
             'aliases' => array(),
             'reference' => '8.x-1.11',
+            'dev_requirement' => false,
+        ),
+        'drupal/search404' => array(
+            'pretty_version' => '2.0.0',
+            'version' => '2.0.0.0',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../web/modules/contrib/search404',
+            'aliases' => array(),
+            'reference' => '2.0.0',
             'dev_requirement' => false,
         ),
         'drupal/token' => array(
