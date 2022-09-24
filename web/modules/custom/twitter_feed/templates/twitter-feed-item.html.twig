@@ -1,0 +1,7 @@
+<div class="tweet">@{{ source.screen_name }} {{ text }}</div>
+{% if image is defined %}
+  <div class="tweet-image">
+    <img src="{{ image.src }}" alt="{{ image.alt }}">
+  </div>
+{% endif %}
+<time class="timeago" datetime="{{ date.stamp }}">{{ date.clean }}</time>
