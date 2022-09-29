@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '51a47d0dd8800dbdae66232e65131c08625623a0',
+        'reference' => 'a45bb15fc4595ee150c97ed9d7f5d837c6d6420c',
         'name' => 'drupal/legacy-project',
         'dev' => true,
     ),
@@ -164,12 +164,12 @@
             'dev_requirement' => false,
         ),
         'doctrine/collections' => array(
-            'pretty_version' => '1.7.3',
-            'version' => '1.7.3.0',
+            'pretty_version' => '1.8.0',
+            'version' => '1.8.0.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../doctrine/collections',
             'aliases' => array(),
-            'reference' => '09dde3eb237756190f2de738d3c97cff10a8407b',
+            'reference' => '2b44dd4cbca8b5744327de78bafef5945c7e7b5e',
             'dev_requirement' => false,
         ),
         'doctrine/common' => array(
@@ -625,7 +625,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '51a47d0dd8800dbdae66232e65131c08625623a0',
+            'reference' => 'a45bb15fc4595ee150c97ed9d7f5d837c6d6420c',
             'dev_requirement' => false,
         ),
         'drupal/mailchimp' => array(
