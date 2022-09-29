@@ -273,11 +273,16 @@ div#block-addthis {
 
 .node-134 p {
   line-height: 1.2;
+  margin: 0 0 .25rem .5rem;
 }
 
 .node-134 h3 {
   font-size: 22px;
   line-height: 1.2;
+}
+
+.node-134 hr {
+  margin: 0 0 .5rem 0;
 }
 
 .node-134 h6 {
@@ -292,8 +297,39 @@ div#block-addthis {
 }
 
 .node-134 .column-content.card {
+  background: #fdebe04a;
+  border: none;
   min-height: 210px;
-  margin: 0 0 25px;
+  margin: 0 0 2rem !important;
+}
+
+.node-134 .column-content.card {
+  content: '';
+  background: url(../images/ga-state-trans-footer.png) no-repeat right bottom #52808e26 !important;
+  background-size: 40px 40px !important;
+  background-position: 95% 90% !important;
+}
+
+hr {
+  background-color: rgb(222, 73, 40);
+}
+
+.node-134 h3 {
+  color: #5a5c58 !important;
+  font-size: 20px !important;
+  line-height: 1.1 !important;
+}
+
+.node-134 p,
+.node-134 strong {
+  font-weight: 400 !important;
+  color: #52808e !important;
+  font-size: 96% !important;
+}
+
+.node-134 .shadow-sm {
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(94, 137, 149, 0.16) !important;
+  box-shadow: 0 0.5rem 1rem rgba(94, 137, 149, 0.16) !important;
 }
 
 /**/
