@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'ffd46c4be9c8e6956a9afd45edd7f8229fca40d0',
+        'reference' => 'bcc1d404d3e2190594b20cf9b069fd0d6407b086',
         'name' => 'drupal/legacy-project',
         'dev' => true,
     ),
@@ -625,7 +625,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'ffd46c4be9c8e6956a9afd45edd7f8229fca40d0',
+            'reference' => 'bcc1d404d3e2190594b20cf9b069fd0d6407b086',
             'dev_requirement' => false,
         ),
         'drupal/mailchimp' => array(
