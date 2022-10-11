@@ -17,7 +17,7 @@
     "require": {
         "composer/installers": "^1.9",
         "cweagans/composer-patches": "^1.7",
-        "drupal/admin_toolbar": "^3.1",
+        "drupal/admin_toolbar": "^3.2",
         "drupal/back_to_top": "^2.0",
         "drupal/better_exposed_filters": "^6.0",
         "drupal/change_author_action": "^1.0",
@@ -31,7 +31,7 @@
         "drupal/dropdown_language": "^3.0",
         "drupal/easy_breadcrumb": "^2.0",
         "drupal/features": "^3.12",
-        "drupal/file_delete": "^1.0",
+        "drupal/file_delete": "^2.0",
         "drupal/google_analytics": "^4.0",
         "drupal/google_map_field": "^1.14",
         "drupal/imce": "^2.4",

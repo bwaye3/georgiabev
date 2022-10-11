@@ -4,4 +4,6 @@ entity.file.delete_form:
     _entity_form: 'file.delete'
     _title: 'Delete file'
   requirements:
-    _permission: 'delete files'
+    _entity_access: 'file.delete'
+  options:
+    _node_operation_route: TRUE
