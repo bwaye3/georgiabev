@@ -718,7 +718,7 @@ span.twitter-time {
 .gabev-icon img {
   vertical-align: middle;
   top: -2px !important;
-  margin: 0 3px 0 0;
+  margin: 0 3px 0 -17px;
   position: relative;
 }
 
