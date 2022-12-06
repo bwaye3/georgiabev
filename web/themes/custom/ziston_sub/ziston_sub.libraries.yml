@@ -4,3 +4,8 @@ ziston_sub.skin.default:
    css:
       theme:
          css/style.css: {}
+
+timeago:
+  version: 4.0.1
+  js:
+    /libraries/timeago/jquery.timeago.js: {}
