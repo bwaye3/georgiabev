@@ -1,4 +1,4 @@
-block.settings.dropdown_language:
+block.settings.dropdown_language:*:
   type: block_settings
   label: 'Dropdown language switcher block'
   mapping:

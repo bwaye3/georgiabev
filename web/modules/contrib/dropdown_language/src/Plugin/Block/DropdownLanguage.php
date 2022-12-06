@@ -2,18 +2,19 @@
 
 namespace Drupal\dropdown_language\Plugin\Block;
 
-use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Access\AccessResult;
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Config\ConfigFactoryInterface;
+use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
-use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Path\PathMatcherInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Url;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\HttpFoundation\RequestStack;
 
 /**
  * Provides an alternative language switcher block.
@@ -56,6 +57,13 @@ class DropdownLanguage extends BlockBase implements ContainerFactoryPluginInterf
   protected $routeMatch;
 
   /**
+   * Request stack.
+   *
+   * @var RequestStack
+   */
+  public $request;
+
+  /**
    * Constructs a new DropdownLanguage instance.
    *
    * @param array $block_configuration
@@ -72,14 +80,17 @@ class DropdownLanguage extends BlockBase implements ContainerFactoryPluginInterf
    *   The path matcher.
    * @param \Drupal\Core\Routing\RouteMatchInterface $route_match
    *   The route Matcher.
+   * @param \Symfony\Component\HttpFoundation\RequestStack $request
+   *   The request.
    */
-  public function __construct(array $block_configuration, $plugin_id, $plugin_definition, LanguageManagerInterface $language_manager, ConfigFactoryInterface $config_factory, PathMatcherInterface $path_matcher, RouteMatchInterface $route_match) {
+  public function __construct(array $block_configuration, $plugin_id, $plugin_definition, LanguageManagerInterface $language_manager, ConfigFactoryInterface $config_factory, PathMatcherInterface $path_matcher, RouteMatchInterface $route_match, RequestStack $request) {
     parent::__construct($block_configuration, $plugin_id, $plugin_definition);
 
     $this->languageManager = $language_manager;
     $this->configFactory = $config_factory;
     $this->pathMatcher = $path_matcher;
     $this->routeMatch = $route_match;
+    $this->request = $request;
   }
 
   /**
@@ -93,7 +104,8 @@ class DropdownLanguage extends BlockBase implements ContainerFactoryPluginInterf
       $container->get('language_manager'),
       $container->get('config.factory'),
       $container->get('path.matcher'),
-      $container->get('current_route_match')
+      $container->get('current_route_match'),
+      $container->get('request_stack')
     );
   }
 
@@ -119,6 +131,13 @@ class DropdownLanguage extends BlockBase implements ContainerFactoryPluginInterf
    */
   public function build() {
     $block = [];
+
+    // Do not output anything if is 404 or 403. #3119474
+    $exception = $this->request->getCurrentRequest()->attributes->get('exception');
+    if ($exception && ($exception->getStatusCode() === 404 || $exception->getStatusCode() === 403)) {
+      return $block;
+    }
+
     $build = [];
     $languages = $this->languageManager->getLanguages();
     if (count($languages) > 1) {
@@ -154,7 +173,7 @@ class DropdownLanguage extends BlockBase implements ContainerFactoryPluginInterf
        * Discover the entity we are currently viewing.
        * note:  page manager (and other) entities need routines. @v3 plugin.
       */
-      $entity = FALSE;
+      $entity = [];
       if ($filter_untranslated == '1') {
         $routedItems = $this->routeMatch;
         foreach ($routedItems->getParameters() as $param) {
@@ -186,7 +205,7 @@ class DropdownLanguage extends BlockBase implements ContainerFactoryPluginInterf
         }
 
         // Removes unused languages from the dropdown.
-        if ($entity && $entity['EntityInterface'] && $filter_untranslated == '1') {
+        if (!empty($entity['EntityInterface']) && $filter_untranslated == '1') {
           $has_translation = (method_exists($entity['EntityInterface'], 'getTranslationStatus')) ? $entity['EntityInterface']->getTranslationStatus($lid) : FALSE;
           $this_translation = ($has_translation && method_exists($entity['EntityInterface'], 'getTranslation')) ? $entity['EntityInterface']->getTranslation($lid) : FALSE;
           $access_translation = ($this_translation && method_exists($this_translation, 'access') && $this_translation->access('view')) ? TRUE : FALSE;
@@ -202,9 +221,6 @@ class DropdownLanguage extends BlockBase implements ContainerFactoryPluginInterf
         '#links' => $links,
         '#attributes' => [
           'class' => ['dropdown-language-item'],
-        ],
-        '#attached' => [
-          'library' => ['dropdown_language/dropdown-language-selector'],
         ],
       ];
       if ($wrapper_default == 1) {
