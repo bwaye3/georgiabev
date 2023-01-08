@@ -1012,9 +1012,11 @@ div#block-twitterfeedblock h2.block-title::before {
   z-index: 1;
   position: relative;
 }
-/*******/
-/*******/
-/*******/
+
+/**** responsive ***/
+/**** responsive ***/
+/**** responsive ***/
+
 @media (max-width: 768px) {
   .header-default .header-main .header-content-inner .branding .site-branding-logo img {
     max-width: 60%;
