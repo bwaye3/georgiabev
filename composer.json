@@ -49,7 +49,7 @@
         "drupal/twitter_embed": "^1.0@alpha",
         "drupal/views_infinite_scroll": "^2.0",
         "drupal/xmlsitemap": "^1.4",
-        "drush/drush": "^11.1"
+        "drush/drush": "^11.4"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -79,6 +79,10 @@
         "drupal-scaffold": {
             "locations": {
                 "web-root": "web"
+            },
+            "file-mapping": {
+                "[web-root]/.htaccess": false,
+                "[web-root]/robots.txt": false
             }
         },
         "installer-paths": {

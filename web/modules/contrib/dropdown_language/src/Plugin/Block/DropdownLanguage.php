@@ -184,6 +184,7 @@ class DropdownLanguage extends BlockBase implements ContainerFactoryPluginInterf
       }
 
       foreach ($links as $lid => $link) {
+        $name = isset($link['language']) ? $link['language']->getName() : '';
 
         // Re-label as per general setting.
         switch ($display_language_id) {
@@ -200,7 +201,7 @@ class DropdownLanguage extends BlockBase implements ContainerFactoryPluginInterf
             break;
 
           case '3':
-            $links[$lid]['title'] = isset($block_config['labels'][$lid]) ? $block_config['labels'][$lid] : $link['language']->getName();
+            $links[$lid]['title'] = isset($block_config['labels'][$lid]) ? $block_config['labels'][$lid] : $name;
             break;
         }
 
