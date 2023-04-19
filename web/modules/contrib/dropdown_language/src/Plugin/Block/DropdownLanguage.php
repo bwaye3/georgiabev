@@ -8,13 +8,13 @@ use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Language\LanguageManagerInterface;
-use Drupal\Core\Path\PathMatcherInterface;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Core\Url;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 
 /**
  * Provides an alternative language switcher block.
@@ -43,13 +43,6 @@ class DropdownLanguage extends BlockBase implements ContainerFactoryPluginInterf
   private $configFactory;
 
   /**
-   * The path matcher.
-   *
-   * @var \Drupal\Core\Path\PathMatcherInterface
-   */
-  protected $pathMatcher;
-
-  /**
    * The Route Matcher.
    *
    * @var \Drupal\Core\Routing\RouteMatchInterface
@@ -76,19 +69,16 @@ class DropdownLanguage extends BlockBase implements ContainerFactoryPluginInterf
    *   The language manager.
    * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
    *   The config factory.
-   * @param \Drupal\Core\Path\PathMatcherInterface $path_matcher
-   *   The path matcher.
    * @param \Drupal\Core\Routing\RouteMatchInterface $route_match
    *   The route Matcher.
    * @param \Symfony\Component\HttpFoundation\RequestStack $request
    *   The request.
    */
-  public function __construct(array $block_configuration, $plugin_id, $plugin_definition, LanguageManagerInterface $language_manager, ConfigFactoryInterface $config_factory, PathMatcherInterface $path_matcher, RouteMatchInterface $route_match, RequestStack $request) {
+  public function __construct(array $block_configuration, $plugin_id, $plugin_definition, LanguageManagerInterface $language_manager, ConfigFactoryInterface $config_factory, RouteMatchInterface $route_match, RequestStack $request) {
     parent::__construct($block_configuration, $plugin_id, $plugin_definition);
 
     $this->languageManager = $language_manager;
     $this->configFactory = $config_factory;
-    $this->pathMatcher = $path_matcher;
     $this->routeMatch = $route_match;
     $this->request = $request;
   }
@@ -103,7 +93,6 @@ class DropdownLanguage extends BlockBase implements ContainerFactoryPluginInterf
       $plugin_definition,
       $container->get('language_manager'),
       $container->get('config.factory'),
-      $container->get('path.matcher'),
       $container->get('current_route_match'),
       $container->get('request_stack')
     );
@@ -134,7 +123,7 @@ class DropdownLanguage extends BlockBase implements ContainerFactoryPluginInterf
 
     // Do not output anything if is 404 or 403. #3119474
     $exception = $this->request->getCurrentRequest()->attributes->get('exception');
-    if ($exception && ($exception->getStatusCode() === 404 || $exception->getStatusCode() === 403)) {
+    if ($exception && $exception instanceof HttpException && ($exception->getStatusCode() === 404 || $exception->getStatusCode() === 403)) {
       return $block;
     }
 
@@ -142,9 +131,9 @@ class DropdownLanguage extends BlockBase implements ContainerFactoryPluginInterf
     $languages = $this->languageManager->getLanguages();
     if (count($languages) > 1) {
       $derivative_id = $this->getDerivativeId();
-      $route = $this->pathMatcher->isFrontPage() ? '<front>' : '<current>';
       $current_language = $this->languageManager->getCurrentLanguage($derivative_id)->getId();
-      $links = $this->languageManager->getLanguageSwitchLinks($derivative_id, Url::fromRoute($route))->links;
+      $languageSwitchLinksObject = $this->languageManager->getLanguageSwitchLinks($derivative_id, Url::fromRouteMatch($this->routeMatch));
+      $links = ($languageSwitchLinksObject !== NULL) ? $languageSwitchLinksObject->links : [];
 
       // Place active language ontop of list.
       if (isset($links[$current_language])) {
@@ -193,7 +182,6 @@ class DropdownLanguage extends BlockBase implements ContainerFactoryPluginInterf
             break;
 
           case '2':
-            $name = $link['language']->getName();
             $links[$lid]['title'] = isset($native_names[$lid]) ? $native_names[$lid][1] : $name;
             if (isset($native_names[$lid]) && (isset($native_names[$lid]) && $native_names[$lid][1] != $name)) {
               $links[$lid]['attributes']['title'] = $name;

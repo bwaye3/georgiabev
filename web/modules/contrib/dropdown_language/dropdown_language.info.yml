@@ -4,11 +4,11 @@ package: Other
 dependencies:
   - drupal:language
   - drupal:block
-core_version_requirement: ^9
+core_version_requirement: ^9.4
 type: module
 configure: dropdown_language.setting
 
-# Information added by Drupal.org packaging script on 2023-03-16
-version: '3.1.2'
+# Information added by Drupal.org packaging script on 2023-03-20
+version: '3.2.0'
 project: 'dropdown_language'
-datestamp: 1678969305
+datestamp: 1679314490
