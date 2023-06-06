@@ -69,7 +69,7 @@ jQuery.fn.sortElements = (function () {
 
 })();
 
-(function ($) {
+(function ($, Drupal) {
 
   "use strict";
 
@@ -81,15 +81,13 @@ jQuery.fn.sortElements = (function () {
       // For (var configType in drupalSettings.features.conflicts) {.
           if (drupalSettings.features.conflicts) {
             var configConflicts = drupalSettings.features.conflicts;
-            $('#features-export-wrapper input[type=checkbox]', context).each(function () {
-              if (!$(this).hasClass('features-checkall')) {
-                var key = $(this).attr('name');
-                var matches = key.match(/^([^\[]+)(\[.+\])?\[(.+)\]\[(.+)\]$/);
-                var component = matches[1];
-                var item = matches[4];
-                if ((component in configConflicts) && (item in configConflicts[component])) {
-                  $(this).parent().addClass('component-conflict');
-                }
+            $('.js-features-export-wrapper .features-export-parent input[type=checkbox]:not(.js-features-filter)', context).each(function () {
+              var key = $(this).attr('name');
+              var matches = key.match(/^([^\[]+)(\[.+\])?\[(.+)\]\[(.+)\]$/);
+              var component = matches[1];
+              var item = matches[4];
+              if ((component in configConflicts) && (item in configConflicts[component])) {
+                $(this).parent().addClass('component-conflict');
               }
             });
           }
@@ -98,14 +96,14 @@ jQuery.fn.sortElements = (function () {
 
       function _checkAll(value) {
         if (value) {
-          $('#features-export-wrapper .component-select input[type=checkbox]:visible', context).each(function () {
+          $('.js-components-select input[type=checkbox]:visible', context).each(function () {
             var move_id = $(this).attr('id');
             $(this).click();
             $('#' + move_id).prop('checked', true);
           });
         }
         else {
-          $('#features-export-wrapper .component-added input[type=checkbox]:visible', context).each(function () {
+          $('.js-components-added input[type=checkbox]:visible', context).each(function () {
             var move_id = $(this).attr('id');
             $(this).click();
             $('#' + move_id).prop('checked', false);
@@ -118,8 +116,8 @@ jQuery.fn.sortElements = (function () {
 
         switch (section) {
           case 'select':
-            parent = $(item).closest('.features-export-list').siblings('.features-export-component');
-            $('.component-count', parent).text(function (index, text) {
+            parent = $(item).closest('.js-features-export-list').siblings('.js-features-export-component');
+            $('.js-component-count', parent).text(function (index, text) {
                 return +text + 1;
               }
             );
@@ -127,8 +125,8 @@ jQuery.fn.sortElements = (function () {
 
           case 'added':
           case 'detected':
-            parent = $(item).closest('.features-export-component');
-            $('.component-count', parent).text(function (index, text) {
+            parent = $(item).closest('.js-features-export-component');
+            $('.js-component-count', parent).text(function (index, text) {
               return text - 1;
             });
         }
@@ -137,13 +135,13 @@ jQuery.fn.sortElements = (function () {
       function moveCheckbox(item, section, value) {
         updateComponentCountInfo(item, section);
         var curParent = item;
-        if ($(item).hasClass('form-type-checkbox')) {
+        if ($(item).hasClass('js-form-type-checkbox')) {
           item = $(item).children('input[type=checkbox]');
         }
         else {
-          curParent = $(item).parents('.form-type-checkbox');
+          curParent = $(item).parents('.js-form-type-checkbox');
         }
-        var newParent = $(curParent).parents('.features-export-parent').find('.component-' + section + ' .form-checkboxes');
+        var newParent = $(curParent).parents('.js-features-export-parent').find('.js-components-' + section + ' .form-checkboxes');
         $(curParent).detach();
         $(curParent).appendTo(newParent);
         var list = ['select', 'added', 'detected', 'included'];
@@ -161,10 +159,13 @@ jQuery.fn.sortElements = (function () {
         else {
           $(item).removeAttr('checked');
         }
-        $(newParent).parents('.component-list').removeClass('features-export-empty');
+        var $newParents = $(newParent);
+        $newParents.parents('.js-features-export-list').removeClass('features-export-empty');
+        // Unhide the config type group.
+        $newParents.parents('.features-export-parent').removeClass('features-filter-hidden');
 
         // re-sort new list of checkboxes based on labels.
-        $(newParent).find('label').sortElements(
+        $newParents.find('label').sortElements(
           function (a, b) {
             return $(a).text() > $(b).text() ? 1 : -1;
           },
@@ -201,14 +202,12 @@ jQuery.fn.sortElements = (function () {
         // the auto-detected items.
         var items = [];  // Will contain a list of selected items exported to feature.
         var components = {};  // Contains object of component names that have checked items.
-        $('#features-export-wrapper input[type=checkbox]:checked', context).each(function () {
-          if (!$(this).hasClass('features-checkall')) {
-            var key = $(this).attr('name');
-            var matches = key.match(/^([^\[]+)(\[.+\])?\[(.+)\]\[(.+)\]$/);
-            components[matches[1]] = matches[1];
-            if (!$(this).hasClass('component-detected')) {
-              items.push(key);
-            }
+        $('.js-features-export-wrapper .features-export-parent input[type=checkbox]:not(.js-features-filter):checked', context).each(function () {
+          var key = $(this).attr('name');
+          var matches = key.match(/^([^\[]+)(\[.+\])?\[(.+)\]\[(.+)\]$/);
+          components[matches[1]] = matches[1];
+          if (!$(this).hasClass('component-detected')) {
+            items.push(key);
           }
         });
         var featureName = $('#edit-machine-name').val();
@@ -229,7 +228,7 @@ inTimeout--; }
             for (var component in data) {
               if (data[component]) {
                 var itemList = data[component];
-                $('#features-export-wrapper .component-' + component + ' input[type=checkbox]', context).each(function () {
+                $('.js-component--name-' + component + ' input[type=checkbox]', context).each(function () {
                   var key = $(this).attr('value');
                   // First remove any auto-detected items that are no longer in component.
                   if ($(this).hasClass('component-detected')) {
@@ -251,7 +250,9 @@ inTimeout--; }
             // Loop over all selected components and check for any that have been completely removed.
             for (var selectedComponent in components) {
               if ((data == null) || !(selectedComponent in data)) {
-                $('#features-export-wrapper .component-' + selectedComponent + ' input[type=checkbox].component-detected', context).each(moveCheckbox(this, 'select', false));
+                $('.js-component--name-' + selectedComponent + ' input[type=checkbox].component-detected', context).each(function () {
+                  moveCheckbox(this, 'select', false);
+                });
               }
             }
           }
@@ -259,7 +260,7 @@ inTimeout--; }
       }
 
       // Handle component selection UI.
-      $('#features-export-wrapper input[type=checkbox]', context).click(function () {
+      $('.js-features-export-wrapper .features-export-parent input[type=checkbox]', context).click(function () {
         _resetTimeout();
         if ($(this).hasClass('component-select')) {
           moveCheckbox(this, 'added', true);
@@ -278,16 +279,55 @@ inTimeout--; }
       });
 
       // Handle select/unselect all.
-      $('#features-filter .features-checkall.form-checkbox', context).click(function () {
+      $('.js-features-checkall', context).click(function () {
+        let $text = $(this).next();
         if ($(this).prop('checked')) {
           _checkAll(true);
-          $(this).next().html(Drupal.t('Deselect all'));
+          $text.text(Drupal.t('Deselect all'))
+            .attr('title', Drupal.t('Deselect all currently expanded configurations'));
         }
         else {
           _checkAll(false);
-          $(this).next().html(Drupal.t('Select all'));
+          $text.text(Drupal.t('Select all'))
+            .attr('title', Drupal.t('Select all currently expanded configurations'));
         }
         _resetTimeout();
+      });
+
+      // Handle hide/show components.
+      $('.js-features-filter .features-hide-component.form-select', context).change(function () {
+        var $exportWrapper = $('.js-features-export-wrapper', context);
+        var componentType = $(this).val();
+        $exportWrapper
+            .find('.js-features-filter-hidden')
+            .removeClass('js-features-filter-hidden');
+        if (componentType) {
+          if (componentType === 'included+groups') {
+            componentType = 'included';
+            // Hide empty config components.
+            $exportWrapper.find('.js-component-count').filter(function() {
+              return $(this).text() === '0';
+            }).parents('.features-export-parent').addClass('js-features-filter-hidden');
+          }
+          $exportWrapper.find('.js-features-export-parent .js-components-' + componentType).addClass('js-features-filter-hidden');
+        }
+      });
+
+      // Collapse/Expand components.
+      $('.js-features-filter .features-toggle-components', context).click(function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var expandAll = Drupal.t('Expand all');
+        var collapseAll = Drupal.t('Collapse all');
+        var $this = $(this);
+        var $components = $('.features-export-component', context);
+        if (expandAll == $this.text()) {
+          $components.attr('open', true);
+          $this.text(collapseAll);
+        } else {
+          $components.attr('open', false);
+          $this.text(expandAll);
+        }
       });
 
       // Handle filtering.
@@ -306,12 +346,12 @@ inTimeout--; }
         filterTimeoutID = window.setTimeout(_triggerFilterTimeout, 200);
       }
       function _updateFilter() {
-        var filter = $('#features-filter input').val();
+        var filter = $('.js-features-filter-input').val();
         var regex = new RegExp(filter, 'i');
         // Collapse fieldsets.
         var newState = {};
         var currentState = {};
-        $('#features-export-wrapper details.features-export-component', context).each(function () {
+        $('.js-features-export-component', context).each(function () {
           // Expand parent fieldset.
           var section = $(this).attr('id');
           var details = $(this);
@@ -350,16 +390,16 @@ inTimeout--; }
           }
         }
       }
-      $('#features-filter input', context).bind("input", function () {
+      $('.js-features-filter-input', context).bind("input", function () {
         _resetFilterTimeout();
       });
-      $('#features-filter .features-filter-clear', context).click(function () {
-        $('#features-filter input').val('');
+      $('.js-features-filter-clear', context).click(function () {
+        $('.js-features-filter-input').val('');
         _updateFilter();
       });
 
       // Show the filter bar.
-      $('#features-filter', context).removeClass('element-invisible');
+      $('.js-features-filter', context).removeClass('visually-hidden');
 
       // Handle Package selection checkboxes in the Differences page.
       $('.features-diff-listing .features-diff-header input.form-checkbox', context).click(function () {
@@ -396,6 +436,25 @@ inTimeout--; }
           $(this).parents('tr').removeClass('selected');
         }
       });
+      // Show/Hide components.
+      $('.features-diff-header-action-link', context).click(function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var showAll = Drupal.t('Show all');
+        var hideAll = Drupal.t('Hide all');
+        var $this = $(this);
+        var $checkbox = $this.closest('tr').find('td:nth-child(1) input:checkbox');
+        var $elements = $this.closest('table').find('tr.diff-' + $checkbox.prop('value'));
+        if (hideAll == $this.text()) {
+          $this.text(showAll);
+          $elements.addClass('js-features-diff-hidden');
+        }
+        else {
+          $this.text(hideAll);
+          $elements.removeClass('js-features-diff-hidden');
+        }
+      });
+
       $('.features-diff-listing thead th:nth-child(2)', context).click(function () {
         var checkbox = $(this).parent().find('th input:checkbox');
         checkbox.click();
@@ -403,4 +462,4 @@ inTimeout--; }
     }
   };
 
-})(jQuery);
+})(jQuery, Drupal);
