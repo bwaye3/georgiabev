@@ -5,7 +5,7 @@ google-map-field-renderer:
   dependencies:
     - core/jquery
     - core/drupal
-    - core/jquery.once
+    - core/once
 
 google-map-field-widget-renderer:
   version: 1.x
@@ -32,7 +32,7 @@ olmap-field-renderer:
   dependencies:
     - core/jquery
     - core/drupal
-    - core/jquery.once
+    - core/once
 
 olmap-field-widget-renderer:
   version: 1.x

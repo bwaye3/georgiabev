@@ -2,11 +2,50 @@
 
 namespace Drupal\change_author_action;
 
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\Core\Messenger\MessengerInterface;
+use Drupal\Core\StringTranslation\TranslationInterface;
+use Drupal\Core\StringTranslation\StringTranslationTrait;
+
 /**
  * ChangeAuthorAction.
  */
 class ChangeAuthorAction {
 
+  use StringTranslationTrait;
+
+  /**
+   * The messenger.
+   */
+  protected $messenger;
+
+  /**
+   * The string translation.
+   */
+  protected $stringTranslation;
+
+  /**
+   * Constructs a \Drupal\change_author_action\ChangeAuthorAction.
+   *
+   * @param \Drupal\Core\Messenger\MessengerInterface $messenger
+   *   Messenger.
+   * @param \Drupal\Core\StringTranslation\TranslationInterface $stringTranslation
+   *   String Translation.
+   */
+  public function __construct(MessengerInterface $messenger, TranslationInterface $stringTranslation) {
+    $this->messenger = $messenger;
+    $this->stringTranslation = $stringTranslation;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container) {
+    return new static(
+      $container->get('messenger'),
+      $container->get('string_translation')
+    );
+  }
   /**
    * {@inheritdoc}
    */
@@ -38,8 +77,8 @@ class ChangeAuthorAction {
 //      );
     }
     else {
-      $message = t('Finished with an error.');
-      \Drupal::messenger()->addStatus($message);
+      $message = $this->t('Finished with an error.');
+      $this->messenger->addStatus($message);
     }
   }
 

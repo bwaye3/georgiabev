@@ -43,7 +43,7 @@ class GoogleMap extends FieldTargetBase implements ConfigurableTargetInterface {
   protected function prepareValue($delta, array &$values) {
     $fields = $this->getConfigurationFields();
     foreach ($fields as $field_id => $name) {
-      $config_id = 'default_' . $field_id;      
+      $config_id = 'default_' . $field_id;
       if (!$values['value']) {
         $values['value'] = $this->configuration[$config_id];
       }

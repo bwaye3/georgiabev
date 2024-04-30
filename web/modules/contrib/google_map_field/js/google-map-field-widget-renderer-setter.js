@@ -115,8 +115,7 @@
     dialog = $('#google_map_field_dialog').dialog({
       modal: true,
       autoOpen: false,
-      width: 750,
-      height: 640,
+      width: 800,
       closeOnEscape: true,
       resizable: false,
       draggable: false,

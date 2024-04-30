@@ -1,0 +1,49 @@
+@@ -51,12 +51,22 @@
+ function twitter_feed_library_info_build() {
+   $lib = twitter_feed_libraries_info();
+   $libraries = [];
++  $library_path = NULL;
+ 
+-  if (!function_exists('libraries_get_path')) {
++  // @todo Remove backward compatibility conditions when Drupal requirement will
++  // be set to 8.9.0. See https://www.drupal.org/node/3099614
++  if (\Drupal::hasService('library.libraries_directory_file_finder')) {
++    /** @var \Drupal\Core\Asset\LibrariesDirectoryFileFinder $library_file_finder */
++    $library_path = \Drupal::service('library.libraries_directory_file_finder')->find('timeago');
++  }
++  elseif (\Drupal::moduleHandler()->moduleExists('libraries')) {
++    $library_path = libraries_get_path('timeago');
++  }
++
++  if (empty($library_path)) {
+     return NULL;
+   }
+ 
+-  $library_path = libraries_get_path('timeago');
+   if (strpos($library_path, '/') !== 0) {
+     $library_path = '/' . $library_path;
+   }
+@@ -112,11 +122,21 @@
+  *   The sorted timeago languages.
+  */
+ function twitter_feed_timeago_languages() {
+-  if (!function_exists('libraries_get_path')) {
++  $path = NULL;
++  // @todo Remove backward compatibility conditions when Drupal requirement will
++  // be set to 8.9.0. See https://www.drupal.org/node/3099614
++  if (\Drupal::hasService('library.libraries_directory_file_finder')) {
++    /** @var \Drupal\Core\Asset\LibrariesDirectoryFileFinder $library_file_finder */
++    $path = \Drupal::service('library.libraries_directory_file_finder')->find('timeago');
++  }
++  elseif (\Drupal::moduleHandler()->moduleExists('libraries')) {
++    $path = libraries_get_path('timeago');
++  }
++
++  if (empty($path)) {
+     return [];
+   }
+ 
+-  $path = libraries_get_path('timeago');
+   $files = \Drupal::service('file_system')->scanDirectory("$path/locales", '/timeago\..{2,14}\.js$/i', ['recurse' => FALSE, 'key' => 'name']);
+   $timeago_locales = [];
+ 

@@ -7,12 +7,12 @@
 
 var google_map_field_map;
 
-(function ($, Drupal) {
+(function ($, Drupal, once) {
 
   Drupal.behaviors.google_map_field_renderer = {
     attach: function (context) {
 
-      $('.google-map-field .map-container').once('.google-map-field-processed').each(function (index, item) {
+      $(once('.google-map-field-processed', '.google-map-field .map-container')).each(function (index, item) {
         // Get the settings for the map from the Drupal.settings object.
         var lat = $(this).attr('data-lat');
         var lon = $(this).attr('data-lon');
@@ -41,7 +41,7 @@ var google_map_field_map;
           trafficLayer.setMap(google_map_field_map);
         }
 
-        google.maps.event.addDomListener(window, 'resize', function () {
+        window.addEventListener("resize", function () {
           var center = google_map_field_map.getCenter();
           google.maps.event.trigger(google_map_field_map, "resize");
           google_map_field_map.setCenter(center);
@@ -72,4 +72,4 @@ var google_map_field_map;
     }
   }
 
-})(jQuery, Drupal);
+})(jQuery, Drupal, once);

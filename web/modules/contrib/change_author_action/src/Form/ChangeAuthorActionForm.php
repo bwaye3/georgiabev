@@ -11,6 +11,7 @@ use Drupal\user\Entity\User;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Routing\RouteBuilderInterface;
 use Drupal\Core\TempStore\PrivateTempStoreFactory;
+use Drupal\Core\Messenger\MessengerInterface;
 
 /**
  * ChangeAuthorActionForm.
@@ -47,6 +48,11 @@ class ChangeAuthorActionForm extends FormBase implements FormInterface {
   protected $routeBuilder;
 
   /**
+   * The messenger.
+   */
+  protected $messenger;
+
+  /**
    * Constructs a \Drupal\change_author_action\Form\BulkUpdateFieldsForm.
    *
    * @param \Drupal\Core\TempStore\PrivateTempStoreFactory $temp_store_factory
@@ -57,12 +63,15 @@ class ChangeAuthorActionForm extends FormBase implements FormInterface {
    *   User.
    * @param \Drupal\Core\Routing\RouteBuilderInterface $route_builder
    *   Route.
+   * @param \Drupal\Core\Messenger\MessengerInterface $messenger
+   *   Messenger.
    */
-  public function __construct(PrivateTempStoreFactory $temp_store_factory, SessionManagerInterface $session_manager, AccountInterface $current_user, RouteBuilderInterface $route_builder) {
+  public function __construct(PrivateTempStoreFactory $temp_store_factory, SessionManagerInterface $session_manager, AccountInterface $current_user, RouteBuilderInterface $route_builder, MessengerInterface $messenger) {
     $this->tempStoreFactory = $temp_store_factory;
     $this->sessionManager = $session_manager;
     $this->currentUser = $current_user;
     $this->routeBuilder = $route_builder;
+    $this->messenger = $messenger;
   }
 
   /**
@@ -73,7 +82,8 @@ class ChangeAuthorActionForm extends FormBase implements FormInterface {
       $container->get('tempstore.private'),
       $container->get('session_manager'),
       $container->get('current_user'),
-      $container->get('router.builder')
+      $container->get('router.builder'),
+      $container->get('messenger')
     );
   }
 
@@ -103,7 +113,7 @@ class ChangeAuthorActionForm extends FormBase implements FormInterface {
       'finished' => '\Drupal\change_author_action\ChangeAuthorAction::changeAuthorActionFinishedCallback',
     ];
     batch_set($batch);
-    return 'Author successfully changed';
+    return $this->t('Author successfully changed.');
   }
 
   /**
@@ -119,7 +129,7 @@ class ChangeAuthorActionForm extends FormBase implements FormInterface {
         if (method_exists($this, 'updateFields')) {
           $return_verify = $this->updateFields();
         }
-        \Drupal::messenger()->addStatus($return_verify);
+        $this->messenger->addStatus($return_verify);
         $this->routeBuilder->rebuild();
         break;
     }
@@ -134,7 +144,7 @@ class ChangeAuthorActionForm extends FormBase implements FormInterface {
       $form = $this->form;
     }
     $form['#title'] = $this->t('Choose new author for selected items');
-    $submit_label = 'Next';
+    $submit_label = $this->t('Next');
 
     switch ($this->step) {
       case 1:
@@ -143,7 +153,7 @@ class ChangeAuthorActionForm extends FormBase implements FormInterface {
           ->get('change_author_ids')
           ->get($this->currentUser->id());
         $form['new_author'] = [
-          '#title' => ('Choose new author'),
+          '#title' => $this->t('Choose new author'),
           '#type' => 'entity_autocomplete',
           '#target_type' => 'user',
           '#required' => TRUE,
@@ -157,10 +167,12 @@ class ChangeAuthorActionForm extends FormBase implements FormInterface {
         $uid = $form_state->getValue('new_author');
         $this->userInput['new_author'] = $uid;
         $user = User::load($uid);
-        $form['#title'] .= ' - ' . $this->t('Are you sure you want to alter the author to @author_name on @count_entities entities?',
+        $form['#title'] .= ' - ' . $this->formatPlural(
+            count($this->userInput['entities']),
+            'Are you sure you want to alter the author to @author_name on one entity?',
+            'Are you sure you want to alter the author to @author_name on @count entities?',
             [
               '@author_name' => $user->label(),
-              '@count_entities' => count($this->userInput['entities']),
             ]
         );
         $submit_label = $this->t('Change author on selected entities');

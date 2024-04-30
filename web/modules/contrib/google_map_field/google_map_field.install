@@ -14,7 +14,7 @@ use Drupal\Core\Entity\Sql\SqlContentEntityStorageException;
 function google_map_field_requirements($phase) {
   $requirements = [];
 
-  // Whether or not an API key or client id is provided.
+  // Whether or no an API key or client id is provided.
   $key_provided = FALSE;
 
   $config = \Drupal::config('google_map_field.settings');
@@ -40,7 +40,7 @@ function google_map_field_requirements($phase) {
     $requirements['google_map_field'] = [
       'title' => t('Google map field'),
       'severity' => REQUIREMENT_WARNING,
-      'value' => t('Google Maps API key or Client ID was not found. As of 2016/06/22, keyless access is no longer supported and it may impact rendering of maps. For more information visit: <a href="@link">@link</a>', [
+      'value' => t('Google Maps API key or Client ID was not found. As of 2016/06/22, keyless access is no longer supported. It may impact rendering of maps. For more information visit: <a href="@link">@link</a>', [
         '@link' => 'http://googlegeodevelopers.blogspot.ca/2016/06/building-for-scale-updates-to-google.html',
       ]),
     ];

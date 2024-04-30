@@ -7,12 +7,12 @@
 
 var olmap_field_map;
 
-(function ($, Drupal) {
+(function ($, Drupal, once) {
 
   Drupal.behaviors.olmap_field_renderer = {
     attach: function (context) {
 
-      $('.olmap-field .map-container').once('.olmap-field-processed').each(function (index, item) {
+      $(once('.olmap-field-processed', '.olmap-field .map-container')).each(function (index, item) {
         // Get the settings for the map from the Drupal.settings object.
         var lat = $(this).attr('data-lat');
         var lon = $(this).attr('data-lon');
@@ -73,4 +73,4 @@ var olmap_field_map;
     }
   }
 
-})(jQuery, Drupal);
+})(jQuery, Drupal, once);

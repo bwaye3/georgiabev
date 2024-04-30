@@ -3,15 +3,14 @@ description: Defines a field type for Google Maps.
 package: Field types
 
 type: module
-core: 8.x
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^9.4 || ^10.0 || ^11
 
 dependencies:
   - drupal:field
 
 configure : gmap.field.settings
 
-# Information added by Drupal.org packaging script on 2020-07-29
-version: '8.x-1.14'
+# Information added by Drupal.org packaging script on 2024-02-11
+version: '2.0.2'
 project: 'google_map_field'
-datestamp: 1596020087
+datestamp: 1707657725

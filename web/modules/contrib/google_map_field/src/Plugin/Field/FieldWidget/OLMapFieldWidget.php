@@ -51,7 +51,7 @@ class OLMapFieldWidget extends WidgetBase {
       '#title' => $this->t('Map Name'),
       '#size' => 32,
       '#type' => 'textfield',
-      '#default_value' => isset($items[$delta]->name) ? $items[$delta]->name : NULL,
+      '#default_value' => $items[$delta]->name ?? NULL,
       '#attributes' => [
         'data-name-delta' => $instance_delta,
       ],
@@ -61,7 +61,7 @@ class OLMapFieldWidget extends WidgetBase {
       '#title' => $this->t('Latitude'),
       '#type' => 'textfield',
       '#size' => 18,
-      '#default_value' => isset($items[$delta]->lat) ? $items[$delta]->lat : NULL,
+      '#default_value' => $items[$delta]->lat ?? NULL,
       '#attributes' => [
         'data-lat-delta' => $instance_delta,
         'class' => [
@@ -74,7 +74,7 @@ class OLMapFieldWidget extends WidgetBase {
       '#title' => $this->t('Longitude'),
       '#type' => 'textfield',
       '#size' => 18,
-      '#default_value' => isset($items[$delta]->lon) ? $items[$delta]->lon : NULL,
+      '#default_value' => $items[$delta]->lon ?? NULL,
       '#attributes' => [
         'data-lon-delta' => $instance_delta,
         'class' => [
@@ -86,7 +86,7 @@ class OLMapFieldWidget extends WidgetBase {
 
     $element['zoom'] = [
       '#type' => 'hidden',
-      '#default_value' => isset($items[$delta]->zoom) ? $items[$delta]->zoom : 9,
+      '#default_value' => $items[$delta]->zoom ?? 9,
       '#attributes' => [
         'data-zoom-delta' => $instance_delta,
       ],
@@ -94,7 +94,7 @@ class OLMapFieldWidget extends WidgetBase {
 
     $element['type'] = [
       '#type' => 'hidden',
-      '#default_value' => isset($items[$delta]->type) ? $items[$delta]->type : 'roadmap',
+      '#default_value' => $items[$delta]->type ?? 'roadmap',
       '#attributes' => [
         'data-type-delta' => $instance_delta,
       ],
@@ -102,7 +102,7 @@ class OLMapFieldWidget extends WidgetBase {
 
     $element['width'] = [
       '#type' => 'hidden',
-      '#default_value' => isset($items[$delta]->width) ? $items[$delta]->width : '100%',
+      '#default_value' => $items[$delta]->width ?? '100%',
       '#attributes' => [
         'data-width-delta' => $instance_delta,
       ],
@@ -110,7 +110,7 @@ class OLMapFieldWidget extends WidgetBase {
 
     $element['height'] = [
       '#type' => 'hidden',
-      '#default_value' => isset($items[$delta]->height) ? $items[$delta]->height : '450px',
+      '#default_value' => $items[$delta]->height ?? '450px',
       '#attributes' => [
         'data-height-delta' => $instance_delta,
       ],
@@ -118,7 +118,7 @@ class OLMapFieldWidget extends WidgetBase {
 
     $element['marker'] = [
       '#type' => 'hidden',
-      '#default_value' => isset($items[$delta]->marker) ? $items[$delta]->marker : "1",
+      '#default_value' => $items[$delta]->marker ?? "1",
       '#attributes' => [
         'data-marker-delta' => $instance_delta,
       ],
@@ -126,7 +126,7 @@ class OLMapFieldWidget extends WidgetBase {
 
     $element['marker_icon'] = [
       '#type' => 'hidden',
-      '#default_value' => isset($items[$delta]->marker_icon) ? $items[$delta]->marker_icon : "",
+      '#default_value' => $items[$delta]->marker_icon ?? "",
       '#attributes' => [
         'data-marker-icon-delta' => $instance_delta,
       ],
@@ -134,7 +134,7 @@ class OLMapFieldWidget extends WidgetBase {
 
     $element['controls'] = [
       '#type' => 'hidden',
-      '#default_value' => isset($items[$delta]->controls) ? $items[$delta]->controls : "1",
+      '#default_value' => $items[$delta]->controls ?? "1",
       '#attributes' => [
         'data-controls-delta' => $instance_delta,
       ],
@@ -142,7 +142,7 @@ class OLMapFieldWidget extends WidgetBase {
 
     $element['infowindow'] = [
       '#type' => 'hidden',
-      '#default_value' => isset($items[$delta]->infowindow) ? $items[$delta]->infowindow : "",
+      '#default_value' => $items[$delta]->infowindow ?? "",
       '#attributes' => [
         'data-infowindow-delta' => $instance_delta,
       ],
@@ -178,7 +178,7 @@ class OLMapFieldWidget extends WidgetBase {
 
     $element['default_marker'] = [
       '#type' => 'hidden',
-      '#default_value' => '/' . drupal_get_path('module', 'google_map_field') . '/images/pin.png',
+      '#default_value' => '/' . \Drupal::service('extension.list.module')->getPath('google_map_field') . '/images/pin.png',
       '#attributes' => [
         'data-default-marker-delta' => $instance_delta,
       ],

@@ -27,7 +27,7 @@
   -moz-box-shadow: 0 0 2px 2px #ababab;
   -o-box-shadow: 0 0 2px 2px #ababab;
   box-shadow: 0 0 2px 2px #ababab;
-  height: 300px;
+  height: 275px;
   margin-bottom: 10px;
   width: 98%;
 }
@@ -51,21 +51,25 @@
 
 #google_map_field_dialog {
   display: flex;
-  min-height: 100vh;
   flex-direction: column;
+  gap: 0;
+  min-height: 100vh;
+  padding: 0 10px;
 }
 
 #google_map_field_container {
   display: flex;
-  flex: 1;
+  flex-direction: row;
+  flex: 1 0 100%;
+  gap: 0;
 }
 
 #google_map_map_container {
-  flex: 1 75%;
+  flex: 1 0 75%;
 }
 
 #google_map_field_options {
-  flex: 0 0 25%;
+  flex: 1 0 25%;
   order: 1;
 }
 
@@ -104,4 +108,12 @@ p.marker-text {
   font-size: 0.8em;
   line-height: 1em;
   margin-top: 0.5em;
+}
+
+#infowindow_container {
+  margin-bottom: 10px;
+}
+
+#infowindow_container label {
+  display: block;
 }

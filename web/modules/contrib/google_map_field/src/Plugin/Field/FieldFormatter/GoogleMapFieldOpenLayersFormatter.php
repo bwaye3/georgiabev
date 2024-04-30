@@ -34,7 +34,7 @@ class GoogleMapFieldOpenLayersFormatter extends FormatterBase {
         '#show_controls' => $item->controls === "1" ? "true" : "false",
         '#width' => $item->width ? $item->width : '320px',
         '#height' => $item->height ? $item->height : '200px',
-        '#default_marker' => '/' . drupal_get_path('module', 'google_map_field') . '/images/pin.png',
+        '#default_marker' => '/' . \Drupal::service('extension.list.module')->getPath('google_map_field') . '/images/pin.png',
       ];
 
       // Handle markup for InfoWindow popup.

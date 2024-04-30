@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - action
+    - media
+    - change_author_action
+id: change_media_author_action_base
+label: 'Change author'
+type: media
+plugin: change_author_action_base

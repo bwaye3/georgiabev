@@ -82,7 +82,7 @@ class GmapFieldSettingsForm extends ConfigFormBase {
     $form['google_map_field_auth_method'] = [
       '#type' => 'select',
       '#title' => $this->t('Google API Authentication Method'),
-      '#default_value' => isset($settings['google_map_field_auth_method']) ? $settings['google_map_field_auth_method'] : GOOGLE_MAP_FIELD_AUTH_KEY,
+      '#default_value' => $settings['google_map_field_auth_method'] ?? GOOGLE_MAP_FIELD_AUTH_KEY,
       '#options' => [
         GOOGLE_MAP_FIELD_AUTH_KEY => $this->t('API Key'),
         GOOGLE_MAP_FIELD_AUTH_WORK => $this->t('Google Maps API for Work'),
