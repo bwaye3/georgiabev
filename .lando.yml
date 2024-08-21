@@ -1,0 +1,21 @@
+name: georgiabev
+recipe: drupal9
+config:
+  php: '8.2'
+  webroot: web
+
+# Services
+services:
+  database:
+    portforward: 51947
+    creds:
+      user: drupal9
+      password: drupal9
+      database: drupal9
+  georgiabev-phpmyadmin:
+    type: phpmyadmin
+
+# Proxy
+proxy:
+  georgiabev-phpmyadmin:
+    - georgiabev-phpmyadmin.lndo.site
