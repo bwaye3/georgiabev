@@ -1817,12 +1817,16 @@
             ],
             "authors": [
                 {
-                    "name": "Pasqualle",
+                    "name": "codebymikey",
+                    "homepage": "https://www.drupal.org/user/3573206"
+                },
+                {
+                    "name": "pasqualle",
                     "homepage": "https://www.drupal.org/user/80733"
                 },
                 {
-                    "name": "codebymikey",
-                    "homepage": "https://www.drupal.org/user/3573206"
+                    "name": "vishalkhode",
+                    "homepage": "https://www.drupal.org/user/2439156"
                 }
             ],
             "description": "Provides basic revert and update functionality for other modules",
@@ -2366,7 +2370,7 @@
                     "email": "dropdown-language@goodscott.com"
                 },
                 {
-                    "name": "Grevil",
+                    "name": "grevil",
                     "homepage": "https://www.drupal.org/user/3668491"
                 },
                 {
@@ -2682,8 +2686,8 @@
                     "homepage": "https://www.drupal.org/user/45640"
                 },
                 {
-                    "name": "pfaocle",
-                    "homepage": "https://www.drupal.org/user/9740"
+                    "name": "mglaman",
+                    "homepage": "https://www.drupal.org/user/2416470"
                 },
                 {
                     "name": "roberto.rivera.ixis",
@@ -3609,12 +3613,20 @@
                     "homepage": "https://www.drupal.org/user/188049"
                 },
                 {
+                    "name": "Anybody",
+                    "homepage": "https://www.drupal.org/user/291091"
+                },
+                {
                     "name": "binnythomas",
                     "homepage": "https://www.drupal.org/user/3123091"
                 },
                 {
                     "name": "emilymathew",
                     "homepage": "https://www.drupal.org/user/2921997"
+                },
+                {
+                    "name": "Grevil",
+                    "homepage": "https://www.drupal.org/user/3668491"
                 },
                 {
                     "name": "jijojoseph_zyxware",
@@ -4084,6 +4096,10 @@
                 "GPL-2.0-or-later"
             ],
             "authors": [
+                {
+                    "name": "alanburke",
+                    "homepage": "https://www.drupal.org/user/35997"
+                },
                 {
                     "name": "amateescu",
                     "homepage": "https://www.drupal.org/user/729614"
@@ -6055,6 +6071,7 @@
                 "issues": "https://github.com/stackphp/builder/issues",
                 "source": "https://github.com/stackphp/builder/tree/v1.0.6"
             },
+            "abandoned": true,
             "install-path": "../stack/builder"
         },
         {

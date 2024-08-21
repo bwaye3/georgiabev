@@ -64,7 +64,7 @@ function twitter_feed_library_info_build() {
   }
 
   if (empty($library_path)) {
-    return $libraries;
+    return NULL;
   }
 
   if (strpos($library_path, '/') !== 0) {
@@ -168,10 +168,6 @@ function template_preprocess_twitter_feed_item(&$vars) {
   // This is the datestamp that jQuery timeago expects.
   $vars['date']['stamp'] = date('c', strtotime($tweet->created_at));
   $vars['date']['clean'] = \Drupal::service('date.formatter')->format(strtotime($tweet->created_at), 'short');
-  if (isset($tweet->extended_entities->media[0])) {
-    $vars['image']['src'] = $tweet->extended_entities->media[0]->media_url_https;
-    $vars['image']['alt'] = '';
-  }
   $vars['source']['screen_name'] = $tweet->user->screen_name;
   $vars['source']['name'] = $tweet->user->name;
 }

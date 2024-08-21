@@ -168,10 +168,6 @@ class TwitterFeedBlock extends BlockBase implements ContainerFactoryPluginInterf
 
     $renderable_tweets = [];
     foreach (json_decode($res->getBody()) as $tweet_object) {
-      if (!isset($tweet_object->text)) {
-        $full = $tweet_object->full_text;
-        $tweet_object->text = strlen($full) > 140 ? substr($full, 0, 140) . '...' : $full;
-      }
       $renderable_tweet = [
         '#theme' => 'twitter_feed_item',
         '#tweet' => $tweet_object,
