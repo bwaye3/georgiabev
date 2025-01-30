@@ -50,6 +50,7 @@
         "drupal/twitter_embed": "^1.0@alpha",
         "drupal/twitter_feed": "^1.4",
         "drupal/views_infinite_scroll": "^2.0",
+        "drupal/webform": "^6.2",
         "drupal/xmlsitemap": "^1.4",
         "drush/drush": "^11.4"
     },
